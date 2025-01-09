@@ -7,6 +7,7 @@ internal class Program
     {
         Solution sol = new Solution();
         Console.WriteLine(sol.solution0108(12,23));
+
     }
 
 }
