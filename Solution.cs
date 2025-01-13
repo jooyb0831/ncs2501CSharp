@@ -5,6 +5,18 @@ class Solution
 {
 
     /// <summary>
+    /// 숫자 비교하기
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int solution0113(int num1, int num2)
+    {
+        int answer = (num1 == num2) ? 1 : -1;
+        return answer;
+    }
+
+    /// <summary>
     /// 태어난 연도 출력(나이)
     /// </summary>
     /// <param name="age">2022년의 나이</param>

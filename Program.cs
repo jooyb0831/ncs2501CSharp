@@ -6,7 +6,7 @@ internal class Program
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        Console.WriteLine(sol.solution011002(25));
+        Console.WriteLine(sol.solution0113(1,1));
     }
 
 }
