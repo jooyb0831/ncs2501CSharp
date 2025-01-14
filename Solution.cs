@@ -3,7 +3,37 @@ using System.Formats.Asn1;
 
 class Solution
 {
-
+    /// <summary>
+    /// 양꼬치 문제
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public string solution01142(int n, int k)
+    {
+        int sum = 0;
+        int ser = n/10;
+        sum = n*12000+k*2000-ser*2000;
+        string answer = sum.ToString("#,###")+"원";
+        return answer;
+    }
+    /// <summary>
+    /// 짝수의 합
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int solution0114(int n)
+    {
+        int answer = 0;
+        for(int i =0; i<=n; i++)
+        {
+            if(i%2==0)
+            {
+                answer += i;
+            }
+        }
+        return answer;
+    }
     /// <summary>
     /// 숫자 비교하기
     /// </summary>
