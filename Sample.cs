@@ -1,8 +1,40 @@
 using System.Diagnostics;
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 
 class Sample
 {
+
+    public void List()
+    {
+        List<int> intList = new List<int>();
+        List<float> floatList = new List<float>();
+        List<char> charList = new List<char>();
+        List<string> strList = new List<string>();
+        List<bool> boolList = new List<bool>();
+
+        intList.Add(0);
+        intList.Add(1);
+        intList.Remove(0);
+        int value = intList.Count;
+        Console.WriteLine(value);
+
+        // Linked List - 연결 리스트-
+        LinkedList<string> list = new LinkedList<string>();
+        list.AddLast("Apple");
+        list.AddLast("Banana");
+        list.AddLast("Lemon");
+
+        //LinkedList의 node
+        LinkedListNode<string> node = list.Find("Banana");
+        LinkedListNode<string> newNode = new LinkedListNode<string>("Grape");
+        list.AddAfter(node, newNode);
+        list.ToList<string>().ForEach(p => Console.WriteLine(p));
+
+    }
+
+
+
     public void Array()
     {
         #region 배열

@@ -1,8 +1,37 @@
 using System.Diagnostics;
 using System.Formats.Asn1;
+using System.Linq;
 
 class Solution
 {
+    /// <summary>
+    /// 배열의 평균값
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public double solution0115 (int[] numbers)
+    {
+        
+        double answer = 0;
+        foreach(var item in numbers)
+        {
+            answer += (double)item;
+        }
+        answer /= numbers.Length;
+        return answer;
+        
+        //계산하는 것 중 하나가 double 유형이면 double로 됨.
+        /*
+        for(int i =0; i<numbers.Length; i++)
+        {
+            answer+=numbers[i];
+        }
+        */
+
+        //return numbers.Average();
+        
+    }
+
     /// <summary>
     /// 양꼬치 문제
     /// </summary>
