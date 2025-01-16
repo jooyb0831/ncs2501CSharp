@@ -5,11 +5,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] intArray = new int[]{1,2,3,4,5,6,7,8,9,10};
+        int[] intArray = new int[]{1,2,3,4,5};
         Solution sol = new Solution();
-        Console.WriteLine(sol.solution0115(intArray));
+        string str = "Happy birthday!";
+        //Console.WriteLine(sol.solution01162(intArray,0,2));
         Sample sam = new Sample();
-        //sam.List();
+        //Util util = new Util();
+        Util.PrintIntArray(sol.solution01162(intArray,1,3));
+        //sam.Queue_Stack()
         
     }
 

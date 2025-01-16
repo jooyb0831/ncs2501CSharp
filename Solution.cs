@@ -4,6 +4,36 @@ using System.Linq;
 
 class Solution
 {
+
+    /// <summary>
+    /// 배열 자르기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int[] solution01162(int[] numbers, int num1, int num2)
+    {   
+        int len = num2-num1+1;
+        int[] answer = new int[len];
+        for(int i = 0; i<len; i++)
+        {
+            answer[i] = numbers[num1+i];
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 편지
+    /// </summary>
+    /// <param name="message"></param>
+    /// <returns></returns>
+    public int solution0116(string message)
+    {
+        return message.Length * 2;
+    }
+
+
     /// <summary>
     /// 배열의 평균값
     /// </summary>

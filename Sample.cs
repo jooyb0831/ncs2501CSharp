@@ -5,6 +5,36 @@ using System.Security.Cryptography.X509Certificates;
 class Sample
 {
 
+    public void Queue_Stack()
+    {
+        //Queue : 선입선출
+
+        Queue<int> intQue = new Queue<int>();
+        intQue.Enqueue(123);
+        intQue.Enqueue(130);
+        intQue.Enqueue(150);
+
+        int next = intQue.Dequeue();
+        Console.WriteLine($"intQue.Count : {intQue.Count}");
+        Console.WriteLine(intQue.Peek());
+        Console.WriteLine(next);
+        next = intQue.Dequeue();
+        Console.WriteLine(next);
+
+        //ConcurrentStack : Enqueue와 Dequeue가 동시에 일어나서(멀티스레딩) 발생할 오류를 방지
+        //Dequeue()대신 TryDequeue()로 사용
+
+        //Stack : 후입선출
+        Stack<float> fStack = new Stack<float>();
+        fStack.Push(10.5f);
+        fStack.Push(3.54f);
+        fStack.Push(4.22f);
+
+        float val = fStack.Pop();
+        Console.WriteLine(val);
+
+    }
+
     public void List()
     {
         List<int> intList = new List<int>();
