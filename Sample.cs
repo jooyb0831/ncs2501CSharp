@@ -1,9 +1,60 @@
+using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 
 class Sample
 {
+    public void Dictionary()
+    {
+        //키-Value의 자료형을 정하고 쓸 수 있는 구조의 자료구조
+
+        Dictionary<int, string> emp = new Dictionary<int, string>();
+        emp.Add(1001, "Jane");
+        emp.Add(1002, "Tom");
+        emp.Add(1003, "Cindy");
+        if(emp.ContainsKey(1004))
+        {
+            Console.WriteLine(emp[1004]);
+
+        }
+    
+        string name = emp[1003];
+        Console.WriteLine(name);
+        int a = emp.Count;
+
+
+        //Concurrent Dictinoary
+
+        //var = 바로 지정해야 에러 안남. 아래처럼 쓸 수 있음.
+        var chr = new List<char>();
+        var dic = new Dictionary<int, string>();
+
+    }
+
+    public void Hash_Table()
+    {
+        //키-값. 해시테이블에서 키값은 하나.
+        
+        Hashtable hash = new Hashtable();
+        hash.Add("irina","Irina SP");
+        hash.Add("tom", "Tom Cr");
+        hash.Add(3, "ans");
+        if(hash.Contains("tom"))
+        {
+            Console.WriteLine(hash["tom"]);
+        }
+
+    }
+
+    public void Deck()
+    {
+        //Deck(데크) : 양쪽 끝에서 삽입과 삭제가 모두가능한 자료구조 -> LinkedList 등과 비슷함.
+        //LinkedList는 각각의 자료가 메모리 어디에 존재할 지 모름, 헤드-테일이 있기 때문에 메모리 상에서 순서에 맞게 연결되어있지는 않음.
+        //데크는 메모리 상에서도 연결되어 있다는 점이 차이점
+        //많이 쓰이지는 않음
+    }
+
 
     public void Queue_Stack()
     {
