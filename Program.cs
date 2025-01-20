@@ -8,11 +8,14 @@ internal class Program
         int[] intArray = new int[]{149,180,192,170};
         Solution sol = new Solution();
         string str = "Happy birthday!";
-        Console.WriteLine(sol.solution0117(intArray, 167));
+        Console.WriteLine(sol.solution0120(4, 12));
         Sample sam = new Sample();
         //Util util = new Util();
         // Util.PrintIntArray(sol.solution01162(intArray,1,3));
         //sam.Dictionary();
+
+        CSVar obj = new CSVar(); // var obj = new CSVar();
+        //obj.Method1();
         
     }
 

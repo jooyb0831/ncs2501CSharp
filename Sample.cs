@@ -114,8 +114,6 @@ class Sample
 
     }
 
-
-
     public void Array()
     {
         #region 배열

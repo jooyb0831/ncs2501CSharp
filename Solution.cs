@@ -4,6 +4,41 @@ using System.Linq;
 
 class Solution
 {
+    /// <summary>
+    /// 피자 나눠먹기3
+    /// </summary>
+    /// <param name="slice"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int solution0120(int slice, int n)
+    {
+        int answer = 0;
+        /*
+        if(n%slice == 0)
+        {
+            answer = n/slice;
+        }
+        else
+        {
+            answer = (n/slice)+1;
+        }
+        */
+
+        /*for
+        for(int i =1; i<=n; i+=slice)
+        {  
+            answer ++;
+        }
+        */
+
+        //while
+        while(slice * answer <n)
+        {
+            answer ++;
+        }
+        return answer;
+    }
+
     public int[] solution01172(int[] num_list)
     {
         int[] answer = new int[2];
