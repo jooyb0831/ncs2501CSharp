@@ -5,6 +5,19 @@ using System.Linq;
 class Solution
 {
     /// <summary>
+    /// 배열 두배 만들기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int[] solution0121(int[] numbers)
+    {
+        for(int i = 0; i<numbers.Length; i++)
+        {
+            numbers[i]*=2;
+        }
+        return numbers;
+    }
+    /// <summary>
     /// 피자 나눠먹기3
     /// </summary>
     /// <param name="slice"></param>

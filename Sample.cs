@@ -1,11 +1,68 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.Loader;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 class Sample
 {
+
+    public void StringBuilderSample()
+    {
+        //StringBuilder : 문자열 갱신가능한 클래스 - 일반 string은 새로 생성하고 집어넣음(변수로 선언해두어도)
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i<26 ; i++)
+        {
+            sb.Append((char)('A'+i)); //Append-Add i를 스트링으로 바꿔서 넣고
+            sb.Append(System.Environment.NewLine); // 줄바꿈 기호
+        }   
+        string s = sb.ToString();
+        Console.WriteLine(s);
+    }
+
+    public void StringSample()
+    {
+        string s1 = "C#";
+        string s2 = "Programmming";
+        //char c1 = 'a';
+        //char c2 = 'b';
+
+        string s3 = s1+" "+s2;
+        //Console.WriteLine("string: {0}", s3);
+
+        string s3substring = s3.Substring(1, 5);
+        Console.WriteLine("Substring: {0}", s3substring); // 표준 숫자 형식 문자열 보기.
+        Console.WriteLine($"Substring: {s3substring}");
+
+    
+        string s = "C# Studies";
+        
+        for(int i = 0; i<s.Length; i++)
+        {
+            Console.WriteLine("{0}: {1}", i, s[i]);
+            Console.WriteLine($"{i} : {s[i]}");
+        }
+    
+        string str = "Hello";
+        char[] charArray = str.ToCharArray();
+        for(int i = 0; i<charArray.Length; i++)
+        {
+            Console.WriteLine(charArray[i]);
+        }
+
+        char[] charArray2 = {'A','B','C','D'};
+        s = new string(charArray2);
+        Console.WriteLine(s);
+
+        //문자연산
+        char c1 = 'A';
+        char c2 = (char)(c1 +3); //아스키 코드에서의 값에다 더해줌.
+        Console.WriteLine(c2);
+    }
+
     public void Dictionary()
+    
     {
         //키-Value의 자료형을 정하고 쓸 수 있는 구조의 자료구조
 
