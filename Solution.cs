@@ -5,6 +5,41 @@ using System.Linq;
 class Solution
 {
     /// <summary>
+    /// 배열의 유사도
+    /// </summary>
+    /// <param name="s1"></param>
+    /// <param name="s2"></param>
+    /// <returns></returns>
+    public int solution0122(string[] s1, string[]s2)
+    {
+        int answer = 0;
+        foreach(var item in s1)
+        {
+            foreach(var item1 in s2)
+            {
+                if(item.Equals(item1))
+                {
+                    answer++;
+                }
+            }
+        }
+        /*
+        for(int i =0; i<s1.Length; i++)
+        {
+            for(int j = 0; j<s2.Length; j++)
+            {
+                if(s1[i].Equals(s2[j]))
+                {
+                    answer ++;
+                }
+            }
+        }
+        */
+        return answer;
+    }
+
+
+    /// <summary>
     /// 배열 두배 만들기
     /// </summary>
     /// <param name="numbers"></param>
@@ -68,6 +103,7 @@ class Solution
         }
         return answer;
     }
+    
     /// <summary>
     /// 머쓱이보다 키 큰 사람
     /// </summary>

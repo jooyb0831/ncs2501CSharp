@@ -7,6 +7,47 @@ using System.Text;
 
 class Sample
 {
+    enum City
+    {
+        Seoul,
+        Dajeon,
+        Busan = 0, //지정하면 그 값 기준으로 다음값 설정됨.
+        Jeju= 10
+
+    }
+
+    [Flags]
+    enum Border
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 8
+        //값을 다르게 주면 비트 연산이 안됨.
+    }
+    public void EnumSample()
+    {
+        //비트연산
+        Border b = Border.Top | Border.Bottom;
+
+        if((b&Border.Top)!=0)
+    {
+        if(b.HasFlag(Border.Bottom)) //HasFlag()이용 플래그 체크
+        {
+            Console.WriteLine(b.ToString()); //(int)b = 13.
+        }
+    }
+        City myCity; // 이넘의 기본값(처음값)이 들어감.
+        myCity = City.Busan;
+
+        int cityValue = (int)myCity;
+
+        if(myCity.Equals(City.Seoul))
+        {
+            Console.WriteLine("Welcome to Seoul");
+        }
+    }
 
     public void StringBuilderSample()
     {
