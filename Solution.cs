@@ -4,6 +4,18 @@ using System.Linq;
 
 class Solution
 {
+    
+    /// <summary>
+    /// 아이스 아메리카노
+    /// </summary>
+    /// <param name="money"></param>
+    /// <returns></returns>
+    public int[] solution0123(int money)
+    {
+        const int COFFEE_PRICE = 5500;
+        return new int[]{money / COFFEE_PRICE, money % COFFEE_PRICE};
+    }
+    
     /// <summary>
     /// 배열의 유사도
     /// </summary>

@@ -7,6 +7,69 @@ using System.Text;
 
 class Sample
 {
+    public void Operator()
+    {
+        //산술 연산자(+, -, *, /, %)
+        int a = (1+2-1) * (4/2) % 3;
+
+        //할당 연산자 (=, +=, -=, *=, /=, %=)
+        int b = 100;
+        int sum = 0 ;
+        sum += b;
+        a%=2;
+
+        //증감 연산자(++, --)
+        int i = 1;
+        //증감 연산자를 앞에 붙이느냐 뒤에 붙이느냐에 따라 차이 존재. 
+        i++; //마지막에 계산함
+        ++i; //제일 먼저 계산됨
+
+        int c = 0; bool d = false;
+        //논리 연산자(&&and, ||or, !not_false)
+        if((a>1&&b<0) || c==1 ||!d) a = 1;
+
+        //비교 연산자(<,>,==,!=,>=,<=)
+
+        //비트 연산자(&and |or ^xor)
+
+        // 0&0(0) 1&0 (0) 
+        // 1|0(1) 0|0(0)
+        // 0^0 (0) 1^0(1) 1^1(0)
+
+        byte a1 = 0b_0000_0111;; //7
+        byte b2 = (byte)((a1&3)|4);
+        Console.WriteLine($"byte b1 : {b2}");
+
+        //Shift 연산자
+        //>>,<< 비트를 이동.
+        int j = 2;
+        j = j<<5; // i의 값을 왼쪽으로 5비트 이동.(이진수상에서 숫자를 옆으로)
+        Console.WriteLine($"2 after left shift 5 :{j}");
+        //shift 연산자는 왼쪽으로 갈 때<<는 *2, 오른쪽>>으로 갈 때에는 /2의 성질.
+
+        //조건 연산자(?, ??)
+        int val = (a>b)? a:b;
+
+        //??연산자 : Null-coalescing operator.
+        //왼쪽 피연산자의 값이 NULL인 경우 ??뒤의 피연산자의 값을 리턴하고, 아니면 그냥 ??앞의 피연산자 값을 맅ㄴ
+        //NULL 데이터가 허용되는 경우에만 사용가능. int는 안 되지만 Nullable<int>는 가능
+        int? i2 = null;
+        int x = i2 ?? 0;
+
+        string s = null;
+        string s2 = s?? string.Empty;
+        //풀어쓰면
+        if(s == null)
+        {
+            s2 = string.Empty;
+        }
+        else
+        {
+            s2 = s;
+        }
+
+
+    }
     enum City
     {
         Seoul,

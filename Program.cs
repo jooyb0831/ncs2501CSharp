@@ -11,11 +11,11 @@ internal class Program
         string []s2 = new string[]{"com","b","d","p","c"};
         Solution sol = new Solution();
         string str = "Happy birthday!";
-        Console.WriteLine(sol.solution0122(s1,s2));
+        //Console.WriteLine(sol.solution0123(5500));
         Sample sam = new Sample();
-        //sam.EnumSample();
+        //sam.Operator();
         Util util = new Util();
-        //Util.PrintIntArray(sol.solution0121(intArray));
+        Util.PrintIntArray(sol.solution0123(15000));
         //Console.WriteLine();
 
         CSVar obj = new CSVar(); // var obj = new CSVar();
