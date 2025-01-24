@@ -1,16 +1,56 @@
 using System.Diagnostics;
 using System.Formats.Asn1;
 using System.Linq;
+using System.Text;
 
 class Solution
 {
-    
+    public string Solution01242(string my_string, int s, int e)
+    {
+       char [] charArray = my_string.ToCharArray();
+       Array.Reverse(charArray,s,e-s+1);
+       return new string(charArray);
+
+    }
+
+    /// <summary>
+    /// 문자열 뒤집기 1
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution0124(string my_string)
+    {
+        string answer ="";
+        /*
+        for(int i = my_string.Length-1; i>=0; i--)
+        {
+            answer += my_string[i];
+        }
+
+        for(int i = 0; i<my_string.Length; i++)
+        {
+            answer = my_string[i] + answer;
+        }
+
+        foreach(var item in my_string)
+        {
+            answer = item + answer;
+        }
+        */
+        StringBuilder sb = new StringBuilder();
+        foreach(var item in my_string)
+        {
+            sb.Insert(0,item);
+        }
+        answer = sb.ToString();
+        return answer;
+    }
     /// <summary>
     /// 아이스 아메리카노
     /// </summary>
     /// <param name="money"></param>
     /// <returns></returns>
-    public int[] solution0123(int money)
+    public int[] Solution0123(int money)
     {
         const int COFFEE_PRICE = 5500;
         return new int[]{money / COFFEE_PRICE, money % COFFEE_PRICE};
@@ -22,7 +62,7 @@ class Solution
     /// <param name="s1"></param>
     /// <param name="s2"></param>
     /// <returns></returns>
-    public int solution0122(string[] s1, string[]s2)
+    public int Solution0122(string[] s1, string[]s2)
     {
         int answer = 0;
         foreach(var item in s1)
@@ -56,7 +96,7 @@ class Solution
     /// </summary>
     /// <param name="numbers"></param>
     /// <returns></returns>
-    public int[] solution0121(int[] numbers)
+    public int[] Solution0121(int[] numbers)
     {
         for(int i = 0; i<numbers.Length; i++)
         {
@@ -70,7 +110,7 @@ class Solution
     /// <param name="slice"></param>
     /// <param name="n"></param>
     /// <returns></returns>
-    public int solution0120(int slice, int n)
+    public int Solution0120(int slice, int n)
     {
         int answer = 0;
         /*
@@ -99,7 +139,7 @@ class Solution
         return answer;
     }
 
-    public int[] solution01172(int[] num_list)
+    public int[] Solution01172(int[] num_list)
     {
         int[] answer = new int[2];
         foreach(var item in num_list)
@@ -122,7 +162,7 @@ class Solution
     /// <param name="array"></param>
     /// <param name="height"></param>
     /// <returns></returns>
-    public int solution0117(int[] array, int height)
+    public int Solution0117(int[] array, int height)
     {
         int answer = 0;
         foreach(var item in array)
@@ -151,7 +191,7 @@ class Solution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int[] solution01162(int[] numbers, int num1, int num2)
+    public int[] Solution01162(int[] numbers, int num1, int num2)
     {   
         int len = num2-num1+1;
         int[] answer = new int[len];
@@ -167,7 +207,7 @@ class Solution
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>
-    public int solution0116(string message)
+    public int Solution0116(string message)
     {
         return message.Length * 2;
     }
@@ -178,7 +218,7 @@ class Solution
     /// </summary>
     /// <param name="numbers"></param>
     /// <returns></returns>
-    public double solution0115 (int[] numbers)
+    public double Solution0115 (int[] numbers)
     {
         
         double answer = 0;
@@ -207,7 +247,7 @@ class Solution
     /// <param name="n"></param>
     /// <param name="k"></param>
     /// <returns></returns>
-    public string solution01142(int n, int k)
+    public string Solution01142(int n, int k)
     {
         int sum = 0;
         int ser = n/10;
@@ -220,7 +260,7 @@ class Solution
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
-    public int solution0114(int n)
+    public int Solution0114(int n)
     {
         int answer = 0;
         for(int i =0; i<=n; i++)
@@ -238,7 +278,7 @@ class Solution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int solution0113(int num1, int num2)
+    public int Solution0113(int num1, int num2)
     {
         int answer = (num1 == num2) ? 1 : -1;
         return answer;
@@ -249,7 +289,7 @@ class Solution
     /// </summary>
     /// <param name="age">2022년의 나이</param>
     /// <returns>출생연도</returns>
-    public int solution011002(int age)
+    public int Solution011002(int age)
     {
         int answer = 2022-age+1;
         return answer;
@@ -261,7 +301,7 @@ class Solution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int solution0110(int num1, int num2)
+    public int Solution0110(int num1, int num2)
     {
         int answer = num1%num2;
         return answer;
@@ -273,7 +313,7 @@ class Solution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int solution0109(int num1, int num2)
+    public int Solution0109(int num1, int num2)
     {
         return num1-num2;
     }
@@ -284,7 +324,7 @@ class Solution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int solution0108(int num1, int num2)
+    public int Solution0108(int num1, int num2)
     {
         int answer = 0;
         answer = num1*num2;

@@ -13,9 +13,9 @@ internal class Program
         string str = "Happy birthday!";
         //Console.WriteLine(sol.solution0123(5500));
         Sample sam = new Sample();
-        //sam.Operator();
+        sam.SwitchStatement(s1);
         Util util = new Util();
-        Util.PrintIntArray(sol.solution0123(15000));
+        //Util.PrintIntArray(sol.Solution0123(15000));
         //Console.WriteLine();
 
         CSVar obj = new CSVar(); // var obj = new CSVar();

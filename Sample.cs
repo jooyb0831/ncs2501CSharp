@@ -7,6 +7,80 @@ using System.Text;
 
 class Sample
 {
+
+    static bool verbose = false;
+    static bool continueOnError = false;
+    static bool logging = false;
+    public void SwitchStatement(string[] args)
+    {
+        string category = "딸기";
+        int price = 100;
+        
+        switch (category)
+        {
+            case "사과":
+                price = 1000;
+                break;
+
+            case "딸기":
+            case "키위":
+                price = 1100;
+                break;
+
+            case "포도":
+                price = 900;
+                break;
+
+            default:
+                price = 0;
+                break;
+        }
+        
+        /*
+        if (category.Equals("사과"))
+        {
+            price = 1000;
+        }
+        else if (category.Equals("딸기"))
+        {
+            price = 1100;
+        }
+        else if (category.Equals("포도"))
+        {
+            price = 900;
+        }
+        else
+        {
+            price = 0;
+        }*/
+        //Console.WriteLine($"Price : {price}");
+
+       if(args.Length!=1)
+       {
+            Console.WriteLine("Usage : MyApp.exe option");
+            return;
+       }
+
+       string option = args[0];
+       switch(option.ToLower())
+       {
+        case "/v":
+        case "/verbose":
+            verbose = true;
+            break;
+        case "/c" :
+            continueOnError = true;
+            break;
+        case "/l" :
+            logging = true;
+            break;
+        default :
+         Console.WriteLine($"Unknown argument {option}");
+         break;
+       }
+
+    }
+
     public void Operator()
     {
         //산술 연산자(+, -, *, /, %)
