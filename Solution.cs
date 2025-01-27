@@ -3,8 +3,44 @@ using System.Formats.Asn1;
 using System.Linq;
 using System.Text;
 
+
 class Solution
 {
+
+    /// <summary>
+    /// 모음제거
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution01272(string my_string)
+    {
+        return my_string.Replace("a","").Replace("e","").Replace("i","")
+                        .Replace("o","").Replace("u","");
+    }
+
+    /// <summary>
+    /// 배열 원소의 길이
+    /// </summary>
+    /// <param name="strList"></param>
+    /// <returns></returns>
+    public int[] Solution0127(string[] strList)
+    {
+        int len = strList.Length;
+        int[] answer = new int[len];
+
+        for(int i = 0; i<len; i++)
+        {
+            answer[i] = strList[i].Length;
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 문자열 뒤집기 2
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="s"></param>
+    /// <param name="e"></param>
+    /// <returns></returns>
     public string Solution01242(string my_string, int s, int e)
     {
        char [] charArray = my_string.ToCharArray();

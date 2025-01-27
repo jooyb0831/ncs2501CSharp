@@ -11,6 +11,72 @@ class Sample
     static bool verbose = false;
     static bool continueOnError = false;
     static bool logging = false;
+    
+    public void DoWhileSample()
+    {
+        int i = 100;
+        do
+        {
+            Console.Write($" {i}");
+            i++;
+        }while(i<10); // 한 번은 무조건 찍힘.
+
+        Console.WriteLine();
+        i=100;
+        Console.Write("while");
+
+        while(i<10)
+        {
+            Console.Write($" {i}");
+            i++;
+        }
+        Console.WriteLine();
+    
+    }
+
+    const int MAXLOOP=10;
+    public void LoopSample()
+    {
+        for(int i = 10; i>0; i--)
+        {
+            Console.Write($"Loop:{i} ");
+        }
+        Console.WriteLine();
+        int x = MAXLOOP;
+        while(x>0)
+        {
+            Console.Write($"While:{x} ");
+            x--;
+        }
+        Console.WriteLine();
+        string[] array = new string[]{"AB","CD","EF"};
+
+        foreach(string s in array)
+        {
+            //Console.WriteLine(s);
+        }
+
+        string[,,] arr = new string[,,]{
+            {{"1","2"}, {"11","22"}},
+            {{"3","4"}, {"33","44"}}
+        };
+        for(int i = 0; i<arr.GetLength(0); i++)
+        {
+            for(int j = 0; j<arr.GetLength(1); j++)
+            {
+                for(int k=0; k<arr.GetLength(2); k++)
+                {
+                    Console.Write($"{arr[i,j,k]}, ");
+                }
+            }
+        }
+        Console.WriteLine();
+        foreach(var item in arr)
+        {
+            Console.Write($"{item}, ");
+        }
+
+    }
     public void SwitchStatement(string[] args)
     {
         string category = "딸기";
