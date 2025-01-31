@@ -8,6 +8,41 @@ class Solution
 {
 
     /// <summary>
+    /// 피자 나눠먹기1
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution01312(int n)
+    {
+        int answer = 0;
+        //온전한 피자 한 판으로 먹을 수 있는 사람 수
+        int piz = n/7;
+
+        //나머지 피자 조각 먹는 사람 수
+        int res = ((n%7) == 0) ? 0 :1;
+
+        answer = piz+res;
+        return answer;
+    }
+    
+    /// <summary>
+    /// 배열 뒤집기
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution0131(int[] num_list)
+    {
+        int len = num_list.Length;
+        int[] answer = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            answer[i] = num_list[len - i - 1];
+        }
+        // Array.Reverse(num_list);
+        return answer;
+    }
+
+    /// <summary>
     /// 모음제거
     /// </summary>
     /// <param name="my_string"></param>

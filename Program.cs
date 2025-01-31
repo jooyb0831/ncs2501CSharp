@@ -14,14 +14,18 @@ internal class Program
         string str = "Happy birthday!";
         //Console.WriteLine(sol.solution0123(5500));
         Sample sam = new Sample();
+        foreach(int num in sam.GetNumber())
+        {
+            Console.WriteLine(num);
+        }
         //sam.DoWhileSample();
         Util util = new Util();
-        Util.PrintIntArray(sol.Solution0127(temp));
+        //Util.PrintIntArray(sol.Solution0127(temp));
         //Console.WriteLine();
 
         CSVar obj = new CSVar(); // var obj = new CSVar();
         //obj.Method1();
-        
+
     }
 
 }

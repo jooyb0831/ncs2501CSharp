@@ -12,6 +12,21 @@ class Sample
     static bool continueOnError = false;
     static bool logging = false;
     
+    //yield : 호출자에게 컬렉션 데이터를 하나씩 리턴할 때 사용됨
+    
+   
+    public IEnumerable<int> GetNumber()
+    {
+         //호출될 때마다 밑으로 내려가면서 찍힘
+        yield return 10;
+        yield return 20;
+        yield return 30;
+
+        // 호출자(A)가 IEnumerable을 리턴하는 메서드(B)를 호출하면, yield return문에서 하나의 값을 리턴하고, 
+        // 해당 메서드(B)의 위치를 기억해 둔다. 호출자(A)가 다시 루프를 돌아 다음 값을 메서드(B)에 요청하면, 
+        //메서드의 기억된 위치 다음 문장부터 실행하여 다음 yield 문을 만나 값을 리턴한다.
+    }
+
     public void DoWhileSample()
     {
         int i = 100;
