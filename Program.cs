@@ -16,11 +16,12 @@ internal class Program
         Sample sam = new Sample();
         foreach(int num in sam.GetNumber())
         {
-            Console.WriteLine(num);
+            //Console.WriteLine(num);
         }
         //sam.DoWhileSample();
         Util util = new Util();
         //Util.PrintIntArray(sol.Solution0127(temp));
+        Util.MakeLotto();
         //Console.WriteLine();
 
         CSVar obj = new CSVar(); // var obj = new CSVar();
