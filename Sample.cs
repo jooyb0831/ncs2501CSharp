@@ -12,9 +12,44 @@ class Sample
     static bool continueOnError = false;
     static bool logging = false;
     
+    public void Try_Catch()
+    {
+        int[] intArray = new int[]{1,2,3};
+        // try-catch 없이 실행
+        // DoSomething(intArray);
+
+        // try-catch
+        try
+        {
+            //실행할 것들
+            DoSomething(intArray);
+        }
+        catch (IndexOutOfRangeException ex) //해당 에러에 대해 캐치함.
+        {
+            //에러처리
+            Console.WriteLine($"에러가 발생했습니다 : {ex}");
+            // throw : Exception이 발생했을 때 이를 Catch에서 잡았다면, Exception은 이미 처리된 것으로 간주.
+            // 이 때 exception을 상위 호출자로 보내고 싶을 때 throw 활용.
+            
+        }
+        catch(ArgumentException aex)
+        {
+            Console.WriteLine($"다른 에러 : {aex}");
+            
+        }
+        finally // 마지막에 반드시 실행
+        {
+            Console.WriteLine("끝났음");
+        }
+    }
+
+    private void DoSomething(int[] ints)
+    {
+        ints[5] = 0;
+    }
+
+
     //yield : 호출자에게 컬렉션 데이터를 하나씩 리턴할 때 사용됨
-    
-   
     public IEnumerable<int> GetNumber()
     {
          //호출될 때마다 밑으로 내려가면서 찍힘
@@ -46,7 +81,7 @@ class Sample
             i++;
         }
         Console.WriteLine();
-    
+
     }
 
     const int MAXLOOP=10;

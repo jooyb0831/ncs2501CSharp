@@ -18,10 +18,10 @@ internal class Program
         {
             //Console.WriteLine(num);
         }
-        //sam.DoWhileSample();
+        sam.Try_Catch();
         Util util = new Util();
         //Util.PrintIntArray(sol.Solution0127(temp));
-        Util.MakeLotto();
+        //Util.MakeLotto();
         //Console.WriteLine();
 
         CSVar obj = new CSVar(); // var obj = new CSVar();
