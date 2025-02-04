@@ -7,6 +7,67 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 수 조작하기 2
+    /// </summary>
+    /// <param name="numLog"></param>
+    /// <returns></returns>
+    public string Solution02042(int[] numLog)
+    {
+        StringBuilder answer = new StringBuilder();
+        for(int i = 0; i<numLog.Length-1; i++)
+        {
+            int minus = numLog[i+1]-numLog[i];
+            switch(minus)
+            {
+                case 1:
+                    answer.Append('w');
+                    break;
+                case -1:
+                    answer.Append('s');
+                    break;
+                case 10:
+                    answer.Append('d');
+                    break;
+                case -10 :
+                    answer.Append('a');
+                    break;
+                default:
+                    break;
+            }
+        }
+        return answer.ToString();
+    }
+    /// <summary>
+    /// 수 조작하기1
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="control"></param>
+    /// <returns></returns>
+    public int Solution0204(int n, string control)
+    {
+        foreach (var item in control)
+        {
+            switch (item)
+            {
+                case 'w':
+                    n ++;
+                    break;
+                case 's':
+                    n --;
+                    break;
+                case 'd':
+                    n += 10;
+                    break;
+                case 'a':
+                    n -= 10;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return n;
+    }
+    /// <summary>
     /// 첫 번째로 나오는 음수
     /// </summary>
     /// <param name="num_list"></param>

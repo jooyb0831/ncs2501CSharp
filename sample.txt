@@ -5,3 +5,8 @@
 SortedDictionary - 일반 딕셔너리와 차이점 : 키값 순서에 따라서 그대로 메모리에 등재됨.
 
 Heap : 힙 속성(Heap Property)를 만족하는 트리 기반의 자료구조. 자료구조의 Heap은 메모리구조의 Heap과는 별개인 다른 개념.
+
+
+네임스페이스(NameSpace)
+: 직접 클래스 접근 -> System.Console.WriteLine();
+: using문 사용 (위에 적고)
