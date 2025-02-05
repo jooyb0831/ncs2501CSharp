@@ -8,10 +8,31 @@ using System.Text;
 class Sample
 {
 
-    static bool verbose = false;
-    static bool continueOnError = false;
-    static bool logging = false;
-    
+    //구조체 정의
+    struct MyPoint
+    {
+        public int X;
+        public int Y;
+
+        public MyPoint(int x, int y)
+        {
+            this.X = x;
+            this.Y = y;
+
+        }
+
+        public override string ToString()
+        {
+            return $"({X}, {Y})";
+        }
+    }
+
+    public void UseStruct()
+    {
+        MyPoint pt = new MyPoint(10,12);
+        Console.WriteLine(pt.ToString());
+    }
+
     public void Try_Catch()
     {
         int[] intArray = new int[]{1,2,3};
@@ -127,6 +148,11 @@ class Sample
         }
 
     }
+
+
+    static bool verbose = false;
+    static bool continueOnError = false;
+    static bool logging = false;
     public void SwitchStatement(string[] args)
     {
         string category = "딸기";

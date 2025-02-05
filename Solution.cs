@@ -7,6 +7,27 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 두 수의 연산값 비교하기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public int Solution0205(int a, int b)
+    {
+        /*
+        StringBuilder str = new StringBuilder();
+        str.Append($"{a}");
+        str.Append($"{b}");
+        string temp = ""+a+b;
+        */
+        int val1 = int.Parse($"{a}{b}");
+        int val2 = 2 * a * b;
+
+        return Math.Max(val1, val2);
+        //return (val1 >= val2) ? val1 : val2;
+
+    }
+    /// <summary>
     /// 수 조작하기 2
     /// </summary>
     /// <param name="numLog"></param>

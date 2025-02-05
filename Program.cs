@@ -18,7 +18,7 @@ internal class Program
         {
             //Console.WriteLine(num);
         }
-        sam.Try_Catch();
+        sam.UseStruct();
         Util util = new Util();
         //Util.PrintIntArray(sol.Solution0127(temp));
         //Util.MakeLotto();
