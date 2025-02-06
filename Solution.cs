@@ -7,6 +7,23 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 카운트 업
+    /// </summary>
+    /// <param name="start"></param>
+    /// <param name="end"></param>
+    /// <returns></returns>
+    public int[] Solution0206(int start, int end)
+    {
+        int len = end - start + 1;
+        int[] answer = new int[len];
+        for(int i = 0; i<len; i++)
+        {
+            answer[i] = start + i;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 두 수의 연산값 비교하기
     /// </summary>
     /// <param name="a"></param>
@@ -27,6 +44,7 @@ class Solution
         //return (val1 >= val2) ? val1 : val2;
 
     }
+
     /// <summary>
     /// 수 조작하기 2
     /// </summary>
@@ -58,6 +76,7 @@ class Solution
         }
         return answer.ToString();
     }
+
     /// <summary>
     /// 수 조작하기1
     /// </summary>
@@ -88,6 +107,7 @@ class Solution
         }
         return n;
     }
+
     /// <summary>
     /// 첫 번째로 나오는 음수
     /// </summary>
@@ -104,6 +124,7 @@ class Solution
         }
         return -1;
     }
+    
     /// <summary>
     /// 피자 나눠먹기1
     /// </summary>

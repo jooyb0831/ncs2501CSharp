@@ -18,7 +18,7 @@ internal class Program
         {
             //Console.WriteLine(num);
         }
-        sam.UseStruct();
+        //sam.UseStruct();
         Util util = new Util();
         //Util.PrintIntArray(sol.Solution0127(temp));
         //Util.MakeLotto();
@@ -27,6 +27,14 @@ internal class Program
         CSVar obj = new CSVar(); // var obj = new CSVar();
         //obj.Method1();
 
+
+        MyCustomer myc = new MyCustomer(55);
+
+        //필드를 퍼블리으로 하면 위험.
+        myc.YearMoney = 77;
+        myc.PrintYearMoney();
+
+        Console.WriteLine($"{myc.Temp}");
     }
 
 }
