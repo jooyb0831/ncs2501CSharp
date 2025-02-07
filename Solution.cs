@@ -6,6 +6,40 @@ using System.Text;
 
 class Solution
 {
+    public int Solution0207 (int[]num_list)
+    {
+        
+        int evenSum = 0;
+        int oddSum = 0;
+        
+        for(int i = 0; i<num_list.Length; i++)
+        {
+            if(i%2==0)
+            {
+                evenSum+=num_list[i];
+            }
+            else
+            {
+                oddSum+=num_list[i];
+            }
+            
+        }
+        
+        bool isEven = true;
+        foreach(var item in num_list)
+        {
+            if(isEven)
+            {
+                evenSum+=item;
+            }
+            else
+            {
+                oddSum+=item;
+            }
+            isEven = !isEven;
+        }
+        return Math.Max(evenSum, oddSum);
+    }
     /// <summary>
     /// 카운트 업
     /// </summary>
