@@ -3,9 +3,52 @@ using System.Formats.Asn1;
 using System.Linq;
 using System.Text;
 
-
 class Solution
 {
+
+    /// <summary>
+    /// 자릿수 더하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution02101(int n)
+    {
+        int answer = 0;
+        string str = n.ToString();
+        foreach (var item in str)
+        {
+            answer += (item - '0');
+        }
+        return answer;
+        /*
+        while(n > 0)
+        {
+            answer += n % 10;
+            n /= 10;
+        }
+        */
+    }
+    /// <summary>
+    /// 주사위 개수
+    /// </summary>
+    /// <param name="box"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0210(int[] box, int n)
+    {
+        int answer = 1;
+        foreach(var item in box)
+        {
+            answer *= item / n;
+        }
+        return answer;
+
+        //return (box[0] / n) * (box[1] / n) * (box[2] / n);
+    }
+
+    /// <summary>
+    /// 짝수 홀수의 합
+    /// </summary>
     public int Solution0207 (int[]num_list)
     {
         
@@ -40,6 +83,7 @@ class Solution
         }
         return Math.Max(evenSum, oddSum);
     }
+    
     /// <summary>
     /// 카운트 업
     /// </summary>
