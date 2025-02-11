@@ -2,10 +2,66 @@ using System.Diagnostics;
 using System.Formats.Asn1;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
+using System.Collections;
+
 
 class Solution
 {
+    /// <summary>
+    /// 짝수는 싫어요
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution02111(int n)
+    {
+        var oddList = new List<int>();
+        for(int i =1; i<=n; i++)
+        {
+            if(i%2!=0)
+            {
+                oddList.Add(i);
+            }
+        }
+        return oddList.ToArray();
+    }
 
+    /// <summary>
+    /// 0 떼기
+    /// </summary>
+    /// <param name="n_str"></param>
+    /// <returns></returns>
+    public string Solution0211(string n_str)
+    {
+        /*
+        string answer = "";
+        for(int i = 0; i<n_str.Length; i++)
+        {
+            if(n_str[i]!='0')
+            {
+                answer = n_str.Substring(i);
+                break;
+            }
+        }
+        return answer;
+
+        bool zero = true;
+        while(zero)
+        {
+            //현재 맨 앞에 문자가 0인지 판별
+            if(n_str[0].CompareTo('0') == 0) //Compare : 두 값의 차이가 얼마인지 알려줌.
+            {
+                n_str = n_str.Substring(1);
+            }
+            else
+            {
+                zero = false;
+            }
+        }
+        */
+        //Convert.ToInt32(n_str).ToString();
+        return int.Parse(n_str).ToString();
+    }
     /// <summary>
     /// 자릿수 더하기
     /// </summary>
