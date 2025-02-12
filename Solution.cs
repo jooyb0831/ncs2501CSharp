@@ -8,6 +8,69 @@ using System.Collections;
 
 class Solution
 {
+    public int Solution012121(int a, int b)
+    {
+        int answer = 0;
+        switch (a % 2)
+        {
+            case 1:
+                {
+                    switch (b % 2)
+                    {
+                        case 1:
+                            answer = a * a + b * b;
+                            break;
+
+                        case 0:
+                            answer = 2 * (a + b);
+                            break;
+                    }
+                    break;
+                }
+            case 0:
+                {
+                    switch (b % 2)
+                    {
+                        case 1:
+                            answer = 2 * (a + b);
+                            break;
+
+                        case 0:
+                            answer = Math.Abs(a - b);
+                            break;
+                    }
+                    break;
+
+                }
+
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 뒤에서 5등 위로
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution0212(int[] num_list)
+    {
+        //List<int> list = num_list.ToList();
+        var list = new List<int>(num_list);
+        list.Sort();
+        for(int i = 0; i<5; i++)
+        {
+            list.RemoveAt(0);
+        }
+        /*
+        int cnt = 0;
+        while(cnt<5)
+        {
+            list.RemoveAt(0);
+            cnt++;
+        }
+        */
+        return list.ToArray();
+    }
+
     /// <summary>
     /// 짝수는 싫어요
     /// </summary>

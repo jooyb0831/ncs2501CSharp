@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Diagnostics;
+using System.Reflection.Metadata;
 
 //인터널:같은 어셈블리에서만 접근 가능.
 internal class Program
@@ -35,6 +36,31 @@ internal class Program
         myc.PrintYearMoney();
 
         Console.WriteLine($"{myc.Temp}");
+
+        Program p = new Program();
+        int val = 100;
+        sam.Calculator(100);
+
+        //ref 사용. 초기화 필요
+        int x = 1;
+        double y = 1.0;
+        double ret = GetData(ref x, ref y);
+
+        //out 사용, 초기화 불필요
+        int c, d;
+        bool bret = GetData (10,20,out c, out d);
+    }
+
+    static double GetData(ref int a, ref double b)
+    {
+        return ++a * ++b;
+    }
+
+    static bool GetData(int a, int b, out int c, out int d)
+    {
+        c = a+b;
+        d = a - b;
+        return true;
     }
 
 }

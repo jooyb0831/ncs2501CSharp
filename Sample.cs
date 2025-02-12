@@ -6,7 +6,76 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 class Sample
+
 {
+
+    public int Calc2(params int[] values) //파라미터 중 parmas 반드시 하나만 존재, 맨 마지막 위치.
+    {
+        int answer = 0;
+        foreach(var item in values)
+        {
+            answer += item;
+        }
+        return answer;
+    }
+    public void Calculator(int a)
+    {
+        Console.WriteLine($"before:{a}");
+        a*=2;
+        Console.WriteLine($"after:{a}");
+    }
+    public void NullabeTest()
+    {
+        int? a = null;
+        int? b = 0;
+        int result = Nullable.Compare<int>(a,b); //Nullabe Static class //compare, compareTo : 비교하지만 결과값을int로 반화.
+        Console.WriteLine(result); // 같지 않음  -리턴 : -1)
+
+        double? c = 0.01;
+        double? d = 0.0100;
+        bool result2 = Nullable.Equals(c,d);
+        Console.WriteLine(result2);//결과 true;
+    } 
+
+    float sum = 0;
+    DateTime time;
+    bool? selected;
+
+    public void CheckInput(int? i, float? d, DateTime? time, bool? selected)
+    {
+        if (i.HasValue && d.HasValue)
+        {
+            sum = (float)i.Value + (float)d.Value;
+
+            //Time값 체크
+            if (!time.HasValue)
+            {
+                throw new ArgumentException();
+            }
+            else
+            {
+                this.time = time.Value;
+            }
+
+            //마냑 selected가  null 이면 false를 할당
+            this.selected = selected ?? false;
+        }
+    }
+    public void NullableSample()
+    {
+        int? i = null;
+        if(i == null)
+        {
+
+        }
+
+        int? [] a = new int?[100];
+
+        //Nullable<T>
+
+
+
+    }
 
     //구조체 정의
     struct MyPoint
