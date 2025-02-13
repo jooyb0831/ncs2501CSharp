@@ -8,6 +8,25 @@ using System.Collections;
 
 class Solution
 {
+    /// <summary>
+    /// 배열의 원소만큼 추가하기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Solution0213(int[] arr)
+    {
+        var listX = new List<int>();
+
+        foreach(var item in arr)
+        {
+            for(int i = 0; i<item; i++)
+            {
+                listX.Add(item);
+            }
+        }
+        return listX.ToArray();
+    }
+    
     public int Solution012121(int a, int b)
     {
         int answer = 0;
