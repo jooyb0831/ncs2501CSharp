@@ -1,3 +1,5 @@
+#define TEST_ENV
+#define ANDROID
 using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
@@ -6,8 +8,28 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 class Sample
-
 {
+
+    public void PreProcess()
+    {
+        #region ints
+        int d1 = 6;
+        int ddd = 7;
+        #endregion  ints
+#if (TEST_ENV)
+        Console.WriteLine("Now TEST ENV");
+    #if (ANDROID)
+        Console.WriteLine("and");
+    #elif (IOS)
+        Console.WriteLine("ㅑㅐㄴ");
+    #elif (PD)
+        Console.WriteLIne("ㅔㅊ");
+    #endif
+#else
+        Console.WriteLine("Now Production EnV");
+#endif
+    }
+
 
     public int Calc2(params int[] values) //파라미터 중 parmas 반드시 하나만 존재, 맨 마지막 위치.
     {

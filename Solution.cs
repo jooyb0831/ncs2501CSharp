@@ -9,6 +9,24 @@ using System.Collections;
 class Solution
 {
     /// <summary>
+    /// 세균 증식
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    public int Solution0214(int n, int t)
+    {
+        //return n * (int) Math.Pow(2,t);
+        return n<<t;
+        /*
+        for (int i = 0; i < t; i++)
+        {
+            n *= 2;
+        }
+        return n;*/
+    }
+
+    /// <summary>
     /// 배열의 원소만큼 추가하기
     /// </summary>
     /// <param name="arr"></param>
@@ -17,16 +35,16 @@ class Solution
     {
         var listX = new List<int>();
 
-        foreach(var item in arr)
+        foreach (var item in arr)
         {
-            for(int i = 0; i<item; i++)
+            for (int i = 0; i < item; i++)
             {
                 listX.Add(item);
             }
         }
         return listX.ToArray();
     }
-    
+
     public int Solution012121(int a, int b)
     {
         int answer = 0;
@@ -75,7 +93,7 @@ class Solution
         //List<int> list = num_list.ToList();
         var list = new List<int>(num_list);
         list.Sort();
-        for(int i = 0; i<5; i++)
+        for (int i = 0; i < 5; i++)
         {
             list.RemoveAt(0);
         }
@@ -98,9 +116,9 @@ class Solution
     public int[] Solution02111(int n)
     {
         var oddList = new List<int>();
-        for(int i =1; i<=n; i++)
+        for (int i = 1; i <= n; i++)
         {
-            if(i%2!=0)
+            if (i % 2 != 0)
             {
                 oddList.Add(i);
             }
@@ -175,7 +193,7 @@ class Solution
     public int Solution0210(int[] box, int n)
     {
         int answer = 1;
-        foreach(var item in box)
+        foreach (var item in box)
         {
             answer *= item / n;
         }
@@ -187,41 +205,41 @@ class Solution
     /// <summary>
     /// 짝수 홀수의 합
     /// </summary>
-    public int Solution0207 (int[]num_list)
+    public int Solution0207(int[] num_list)
     {
-        
+
         int evenSum = 0;
         int oddSum = 0;
-        
-        for(int i = 0; i<num_list.Length; i++)
+
+        for (int i = 0; i < num_list.Length; i++)
         {
-            if(i%2==0)
+            if (i % 2 == 0)
             {
-                evenSum+=num_list[i];
+                evenSum += num_list[i];
             }
             else
             {
-                oddSum+=num_list[i];
+                oddSum += num_list[i];
             }
-            
+
         }
-        
+
         bool isEven = true;
-        foreach(var item in num_list)
+        foreach (var item in num_list)
         {
-            if(isEven)
+            if (isEven)
             {
-                evenSum+=item;
+                evenSum += item;
             }
             else
             {
-                oddSum+=item;
+                oddSum += item;
             }
             isEven = !isEven;
         }
         return Math.Max(evenSum, oddSum);
     }
-    
+
     /// <summary>
     /// 카운트 업
     /// </summary>
@@ -232,7 +250,7 @@ class Solution
     {
         int len = end - start + 1;
         int[] answer = new int[len];
-        for(int i = 0; i<len; i++)
+        for (int i = 0; i < len; i++)
         {
             answer[i] = start + i;
         }
@@ -269,10 +287,10 @@ class Solution
     public string Solution02042(int[] numLog)
     {
         StringBuilder answer = new StringBuilder();
-        for(int i = 0; i<numLog.Length-1; i++)
+        for (int i = 0; i < numLog.Length - 1; i++)
         {
-            int minus = numLog[i+1]-numLog[i];
-            switch(minus)
+            int minus = numLog[i + 1] - numLog[i];
+            switch (minus)
             {
                 case 1:
                     answer.Append('w');
@@ -283,7 +301,7 @@ class Solution
                 case 10:
                     answer.Append('d');
                     break;
-                case -10 :
+                case -10:
                     answer.Append('a');
                     break;
                 default:
@@ -306,10 +324,10 @@ class Solution
             switch (item)
             {
                 case 'w':
-                    n ++;
+                    n++;
                     break;
                 case 's':
-                    n --;
+                    n--;
                     break;
                 case 'd':
                     n += 10;
@@ -340,7 +358,7 @@ class Solution
         }
         return -1;
     }
-    
+
     /// <summary>
     /// 피자 나눠먹기1
     /// </summary>
@@ -350,15 +368,15 @@ class Solution
     {
         int answer = 0;
         //온전한 피자 한 판으로 먹을 수 있는 사람 수
-        int piz = n/7;
+        int piz = n / 7;
 
         //나머지 피자 조각 먹는 사람 수
-        int res = ((n%7) == 0) ? 0 :1;
+        int res = ((n % 7) == 0) ? 0 : 1;
 
-        answer = piz+res;
+        answer = piz + res;
         return answer;
     }
-    
+
     /// <summary>
     /// 배열 뒤집기
     /// </summary>
@@ -383,8 +401,8 @@ class Solution
     /// <returns></returns>
     public string Solution01272(string my_string)
     {
-        return my_string.Replace("a","").Replace("e","").Replace("i","")
-                        .Replace("o","").Replace("u","");
+        return my_string.Replace("a", "").Replace("e", "").Replace("i", "")
+                        .Replace("o", "").Replace("u", "");
     }
 
     /// <summary>
@@ -397,7 +415,7 @@ class Solution
         int len = strList.Length;
         int[] answer = new int[len];
 
-        for(int i = 0; i<len; i++)
+        for (int i = 0; i < len; i++)
         {
             answer[i] = strList[i].Length;
         }
@@ -412,9 +430,9 @@ class Solution
     /// <returns></returns>
     public string Solution01242(string my_string, int s, int e)
     {
-       char [] charArray = my_string.ToCharArray();
-       Array.Reverse(charArray,s,e-s+1);
-       return new string(charArray);
+        char[] charArray = my_string.ToCharArray();
+        Array.Reverse(charArray, s, e - s + 1);
+        return new string(charArray);
 
     }
 
@@ -425,7 +443,7 @@ class Solution
     /// <returns></returns>
     public string Solution0124(string my_string)
     {
-        string answer ="";
+        string answer = "";
         /*
         for(int i = my_string.Length-1; i>=0; i--)
         {
@@ -443,9 +461,9 @@ class Solution
         }
         */
         StringBuilder sb = new StringBuilder();
-        foreach(var item in my_string)
+        foreach (var item in my_string)
         {
-            sb.Insert(0,item);
+            sb.Insert(0, item);
         }
         answer = sb.ToString();
         return answer;
@@ -458,23 +476,23 @@ class Solution
     public int[] Solution0123(int money)
     {
         const int COFFEE_PRICE = 5500;
-        return new int[]{money / COFFEE_PRICE, money % COFFEE_PRICE};
+        return new int[] { money / COFFEE_PRICE, money % COFFEE_PRICE };
     }
-    
+
     /// <summary>
     /// 배열의 유사도
     /// </summary>
     /// <param name="s1"></param>
     /// <param name="s2"></param>
     /// <returns></returns>
-    public int Solution0122(string[] s1, string[]s2)
+    public int Solution0122(string[] s1, string[] s2)
     {
         int answer = 0;
-        foreach(var item in s1)
+        foreach (var item in s1)
         {
-            foreach(var item1 in s2)
+            foreach (var item1 in s2)
             {
-                if(item.Equals(item1))
+                if (item.Equals(item1))
                 {
                     answer++;
                 }
@@ -503,9 +521,9 @@ class Solution
     /// <returns></returns>
     public int[] Solution0121(int[] numbers)
     {
-        for(int i = 0; i<numbers.Length; i++)
+        for (int i = 0; i < numbers.Length; i++)
         {
-            numbers[i]*=2;
+            numbers[i] *= 2;
         }
         return numbers;
     }
@@ -537,9 +555,9 @@ class Solution
         */
 
         //while
-        while(slice * answer <n)
+        while (slice * answer < n)
         {
-            answer ++;
+            answer++;
         }
         return answer;
     }
@@ -547,9 +565,9 @@ class Solution
     public int[] Solution01172(int[] num_list)
     {
         int[] answer = new int[2];
-        foreach(var item in num_list)
+        foreach (var item in num_list)
         {
-            if(item%2==0)
+            if (item % 2 == 0)
             {
                 answer[0]++;
             }
@@ -560,7 +578,7 @@ class Solution
         }
         return answer;
     }
-    
+
     /// <summary>
     /// 머쓱이보다 키 큰 사람
     /// </summary>
@@ -570,11 +588,11 @@ class Solution
     public int Solution0117(int[] array, int height)
     {
         int answer = 0;
-        foreach(var item in array)
+        foreach (var item in array)
         {
-            if(height<item)
+            if (height < item)
             {
-                answer ++;
+                answer++;
             }
         }
         /*
@@ -597,12 +615,12 @@ class Solution
     /// <param name="num2"></param>
     /// <returns></returns>
     public int[] Solution01162(int[] numbers, int num1, int num2)
-    {   
-        int len = num2-num1+1;
+    {
+        int len = num2 - num1 + 1;
         int[] answer = new int[len];
-        for(int i = 0; i<len; i++)
+        for (int i = 0; i < len; i++)
         {
-            answer[i] = numbers[num1+i];
+            answer[i] = numbers[num1 + i];
         }
         return answer;
     }
@@ -623,17 +641,17 @@ class Solution
     /// </summary>
     /// <param name="numbers"></param>
     /// <returns></returns>
-    public double Solution0115 (int[] numbers)
+    public double Solution0115(int[] numbers)
     {
-        
+
         double answer = 0;
-        foreach(var item in numbers)
+        foreach (var item in numbers)
         {
             answer += (double)item;
         }
         answer /= numbers.Length;
         return answer;
-        
+
         //계산하는 것 중 하나가 double 유형이면 double로 됨.
         /*
         for(int i =0; i<numbers.Length; i++)
@@ -643,7 +661,7 @@ class Solution
         */
 
         //return numbers.Average();
-        
+
     }
 
     /// <summary>
@@ -655,9 +673,9 @@ class Solution
     public string Solution01142(int n, int k)
     {
         int sum = 0;
-        int ser = n/10;
-        sum = n*12000+k*2000-ser*2000;
-        string answer = sum.ToString("#,###")+"원";
+        int ser = n / 10;
+        sum = n * 12000 + k * 2000 - ser * 2000;
+        string answer = sum.ToString("#,###") + "원";
         return answer;
     }
     /// <summary>
@@ -668,9 +686,9 @@ class Solution
     public int Solution0114(int n)
     {
         int answer = 0;
-        for(int i =0; i<=n; i++)
+        for (int i = 0; i <= n; i++)
         {
-            if(i%2==0)
+            if (i % 2 == 0)
             {
                 answer += i;
             }
@@ -696,7 +714,7 @@ class Solution
     /// <returns>출생연도</returns>
     public int Solution011002(int age)
     {
-        int answer = 2022-age+1;
+        int answer = 2022 - age + 1;
         return answer;
     }
 
@@ -708,7 +726,7 @@ class Solution
     /// <returns></returns>
     public int Solution0110(int num1, int num2)
     {
-        int answer = num1%num2;
+        int answer = num1 % num2;
         return answer;
     }
 
@@ -720,7 +738,7 @@ class Solution
     /// <returns></returns>
     public int Solution0109(int num1, int num2)
     {
-        return num1-num2;
+        return num1 - num2;
     }
 
     /// <summary>
@@ -732,7 +750,7 @@ class Solution
     public int Solution0108(int num1, int num2)
     {
         int answer = 0;
-        answer = num1*num2;
+        answer = num1 * num2;
         return answer;
     }
 }
