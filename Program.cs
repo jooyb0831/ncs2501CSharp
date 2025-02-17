@@ -51,6 +51,17 @@ internal class Program
         bool bret = GetData (10,20,out c, out d);
     }
 
+    private static void IndexerSample()
+    {
+        //인덱서
+        MyClass cls = new MyClass();
+        cls.SetName("KIM");
+        cls[1] = 1024;
+        int i = cls[1];
+        int ii = cls["KIM"];
+        cls["LEE"] = 3;
+    }
+
     static double GetData(ref int a, ref double b)
     {
         return ++a * ++b;

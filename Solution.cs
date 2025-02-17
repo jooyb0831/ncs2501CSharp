@@ -9,6 +9,31 @@ using System.Collections;
 class Solution
 {
     /// <summary>
+    /// 콜라츠 수열 만들기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0217(int n)
+    {
+        List<int> numList = new List<int>();
+        numList.Add(n);
+
+        while (n != 1)
+        {
+            if (n % 2 == 0)
+            {
+                n /= 2;
+            }
+            else
+            {
+                n = 3 * n + 1;
+            }
+            //n = (n % 2 == 0) ? (n / 2) : (3 * n + 1);
+            numList.Add(n);
+        }
+        return numList.ToArray();
+    }
+    /// <summary>
     /// 세균 증식
     /// </summary>
     /// <param name="n"></param>
