@@ -10,7 +10,7 @@ internal class Program
         int[] intArray = new int[]{1,2,3,4,5};
         string []s1 = new string[]{"a","b","c"};
         string []s2 = new string[]{"com","b","d","p","c"};
-        string []temp = new string[]{"We", "Are", "The","World!"};
+        string []temp = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Solution sol = new Solution();
         string str = "Happy birthday!";
         //Console.WriteLine(sol.solution0123(5500));
@@ -24,6 +24,7 @@ internal class Program
         //Util.PrintIntArray(sol.Solution0127(temp));
         //Util.MakeLotto();
         //Console.WriteLine();
+        Util.PrintStrArray(sol.Solution0218(temp));
 
         CSVar obj = new CSVar(); // var obj = new CSVar();
         //obj.Method1();
@@ -31,7 +32,7 @@ internal class Program
 
         MyCustomer myc = new MyCustomer(55);
 
-        //필드를 퍼블리으로 하면 위험.
+        //필드를 퍼블릭으로 하면 위험.
         myc.YearMoney = 77;
         myc.PrintYearMoney();
 
@@ -49,8 +50,35 @@ internal class Program
         //out 사용, 초기화 불필요
         int c, d;
         bool bret = GetData (10,20,out c, out d);
+
+       
     }
 
+    private static void ClassTest()
+    {
+        Animal anima = new Animal();
+        anima.Age = 30;
+        anima.Name = "anim";
+
+        Dog dog = new Dog();
+        dog.Age = 3;
+        dog.Name = "puppy";
+        dog.HowOld();
+        dog.SetSize(1.5f);
+
+        Bird bird = new Bird();
+        bird.Age = 4;
+        bird.Name = "eagle";
+        bird.Fly();
+
+        ChildA cha = new ChildA();
+        cha.GetFirst();
+        cha.GetNext();
+
+        NewSpecies np = new NewSpecies();
+        np.SetSize(1.5f);
+        
+    }
     private static void IndexerSample()
     {
         //인덱서

@@ -4,10 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using System.Collections;
+using System.Security.Cryptography;
 
 
 class Solution
 {
+    /// <summary>
+    /// 5명씩
+    /// </summary>
+    /// <param name="names"></param>
+    /// <returns></returns>
+    public string[] Solution0218(string[] names)
+    {
+        List<string> nameList = new List<string>();
+        for (int i = 0; i < names.Length; i++)
+        {
+            if (i % 5 == 0)
+            {
+                nameList.Add(names[i]);
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return nameList.ToArray();
+    }
+
     /// <summary>
     /// 콜라츠 수열 만들기
     /// </summary>

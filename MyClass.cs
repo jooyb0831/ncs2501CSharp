@@ -1,5 +1,8 @@
 class MyClass
 {
+
+    //cf : 인터페이스 : 다중상속 가능. 내부에 매서드내용은 작성 불가. 상속받은 애에서 반드시 내용을 정의.
+
     private const int MAX = 10;
     private string name;
 

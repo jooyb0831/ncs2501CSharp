@@ -4,6 +4,24 @@ using System.Diagnostics;
 class Util
 {
     /// <summary>
+    /// 문자열 배열의 내용을 출력
+    /// </summary>
+    /// <param name="strArray"></param>
+    public static void PrintStrArray(string[] strArray)
+    {
+        Console.Write("{");
+        for(int i = 0; i < strArray.Length; i++)
+        {
+            if(i!=0)
+            {
+                Console.Write(", ");
+            }
+            Console.Write($"\"{strArray[i]}\"");
+        }
+        Console.Write("}");
+    }
+
+    /// <summary>
     /// 정수 배열의 내용을 출력
     /// </summary>
     /// <param name="intArray">출력할 배열</param>

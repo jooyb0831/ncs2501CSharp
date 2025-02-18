@@ -1,3 +1,7 @@
 {
-    "editor.acceptSuggestionOnCommitCharacter": true
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "css.format.spaceAroundSelectorSeparator": true,
+    "less.format.spaceAroundSelectorSeparator": true,
+    "css.completion.completePropertyWithSemicolon": true,
+    "css.format.newlineBetweenSelectors": true
 }
