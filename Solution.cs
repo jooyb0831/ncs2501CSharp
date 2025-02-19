@@ -10,6 +10,53 @@ using System.Security.Cryptography;
 class Solution
 {
     /// <summary>
+    /// 최댓값 만들기2
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int Solution02191(int[] numbers)
+    {
+        int answer = int.MinValue;
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                if (answer < numbers[i] * numbers[j])
+                {
+                    answer = numbers[i] * numbers[j];
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 최댓값 만들기 1
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int Solution0219(int[] numbers)
+    {
+        int answer = 0;
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            for(int j = i+1; j<numbers.Length; j++)
+            {
+                if(answer<numbers[i] * numbers[j])
+                {
+                    answer = numbers[i] * numbers[j];
+                }
+            }
+        }
+        return answer;
+
+        /*
+        Array.Sort(numbers);
+        int len = numbers.Length;
+        return numbers[len-1] * numbers[len-2];
+        */
+    }
+    /// <summary>
     /// 5명씩
     /// </summary>
     /// <param name="names"></param>

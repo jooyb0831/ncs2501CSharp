@@ -1,8 +1,19 @@
 class MyClass
 {
 
-    //cf : 인터페이스 : 다중상속 가능. 내부에 매서드내용은 작성 불가. 상속받은 애에서 반드시 내용을 정의.
+    private int val = 1;
+    //인스턴스 매서드
+    public int InstRun()
+    {
+        return val;
+    }
 
+    //정적 매서드
+    public static int Run()
+    {
+        return 1;
+    }
+    //cf : 인터페이스 : 다중상속 가능. 내부에 매서드내용은 작성 불가. 상속받은 애에서 반드시 내용을 정의.
     private const int MAX = 10;
     private string name;
 
@@ -59,5 +70,39 @@ class MyClass
                 data[0] = value;
             }
         }
+    }
+}
+
+public class Client
+{
+    public void Test()
+    {
+        //인스턴스 매서드 호출
+        MyClass myClass = new MyClass();
+        int i = myClass.InstRun();
+
+        //정적 메서드 호출
+        int j = MyClass.Run();
+    }
+}
+
+public static class MyUtility
+{
+    private static int ver;
+
+    //static 생성자 (static은 public생성자 안됨)
+    static MyUtility()
+    {
+        ver = 1;
+    }
+
+    public static string Convert(int i )
+    {
+        return i.ToString();
+    }
+
+    public static int ConvertBack(string s)
+    {
+        return int.Parse(s);
     }
 }
