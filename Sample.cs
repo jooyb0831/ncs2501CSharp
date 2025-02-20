@@ -9,7 +9,11 @@ using System.Text;
 
 class Sample
 {
+    //제네릭
+    //class MyClass<T> where T : struct T는 value type(구조체는 valueType)
+    //class MyClass<T> where T : class  T는 Reference Type(클래스는 reference Type)
 
+    
     public void PreProcess()
     {
         #region ints

@@ -10,6 +10,49 @@ using System.Security.Cryptography;
 class Solution
 {
     /// <summary>
+    /// 삼각형의 완성조건2
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
+    public int Solution02201(int[] sides)
+    {
+        int answer = 0;
+        int maxSide = sides.Max();
+        int minSide = sides.Min();
+
+        for(int i = 1; i <= maxSide; i++)
+        {
+            if(maxSide < i + minSide)
+            {
+                answer ++;
+            }
+        }
+
+        for (int i = maxSide + 1; i < maxSide + minSide; i++)
+        {
+            answer ++;
+        }
+
+        return answer;
+    }
+    /// <summary>
+    /// 삼각형의 완성조건1
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
+    public int Solution0220(int[] sides)
+    {
+        Array.Sort(sides);
+        if(sides[2] < sides[0] + sides[1])
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
+    /// <summary>
     /// 최댓값 만들기2
     /// </summary>
     /// <param name="numbers"></param>
