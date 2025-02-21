@@ -24,7 +24,10 @@ internal class Program
         //Util.PrintIntArray(sol.Solution0127(temp));
         //Util.MakeLotto();
         //Console.WriteLine();
-        Util.PrintStrArray(sol.Solution0218(temp));
+        float[] farray = {0.1f, 1.99f, 978.559f};
+        Util.PrintArray<int>(intArray);
+        Util.PrintArray<string>(sol.Solution0218(temp));
+        Util.PrintArray<float>(farray);
 
         CSVar obj = new CSVar(); // var obj = new CSVar();
         //obj.Method1();
