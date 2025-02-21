@@ -1,5 +1,18 @@
-class MyClass
+//Interface
+public interface ICompareable //인터페이스 자체는 정의만 있고 구현부는 없음
 {
+   int CompareTo(object obj);
+}
+
+class MyClass : IComparable
+{
+    private int key;
+    private int value;
+    public int CompareTo(object? obj)
+    {
+        MyClass target = (MyClass)obj;
+        return this.key.CompareTo(target.key);
+    }
 
     private int val = 1;
     //인스턴스 매서드
@@ -49,6 +62,8 @@ class MyClass
     {
         name = strName;
     }
+
+
 
     public int this[string str]
     {

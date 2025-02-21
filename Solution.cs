@@ -9,6 +9,31 @@ using System.Security.Cryptography;
 
 class Solution
 {
+
+    /// <summary>
+    /// 9로 나눈 나머지
+    /// </summary>
+    /// <param name="number"></param>
+    /// <returns></returns>
+    public int Solution0221(string number)
+    {
+        int answer = 0;
+        foreach(var item in number)
+        {
+            //item의 정수값 더해줌
+            answer += (item - '0'); //0(아스키코드값)으로부터 얼만큼 떨어져 있는지를 더하면 됨.
+        }
+        return answer % 9;
+        /*
+        int answer = 0;
+        foreach (var item in number)
+        {
+            answer += int.Parse(item.ToString());
+        }
+        return answer % 9;
+        */
+    }
+
     /// <summary>
     /// 삼각형의 완성조건2
     /// </summary>
