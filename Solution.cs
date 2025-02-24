@@ -5,10 +5,28 @@ using System.Text;
 using System.Collections.Generic;
 using System.Collections;
 using System.Security.Cryptography;
+using System.Buffers;
 
 
 class Solution
 {
+    /// <summary>
+    /// 약수 구하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0224(int n)
+    {
+        List<int> temp = new List<int>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                temp.Add(i);
+            }
+        }
+        return temp.ToArray();
+    }
 
     /// <summary>
     /// 9로 나눈 나머지

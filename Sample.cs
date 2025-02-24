@@ -9,6 +9,32 @@ using System.Text;
 
 class Sample
 {
+    //delegate 정의
+    delegate int MyDelegate(string s);
+
+    public void Test()
+    {
+        //델리게이트 객체 생성
+        MyDelegate m = new MyDelegate(StringToInt);
+
+        //델리게이트 객체를 매서드로 전달
+        Run(m);
+    }
+
+    //델리게이트 대상이 되는 어떤 매서드
+    int StringToInt(string s)
+    {
+        return int.Parse(s);
+    }
+
+    //델리게이트를 전달받는 매서드
+    void Run(MyDelegate m)
+    {
+        //델리게이트로부터 매서드 실행
+        int i = m("123");
+        Console.WriteLine(i);
+    }
+
     //제네릭
     //class MyClass<T> where T : struct T는 value type(구조체는 valueType)
     //class MyClass<T> where T : class  T는 Reference Type(클래스는 reference Type)
