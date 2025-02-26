@@ -9,7 +9,31 @@ using System.Buffers;
 
 
 class Solution
-{
+{   
+    /// <summary>
+    /// 간단한 식 계산하기
+    /// </summary>
+    /// <param name="binomial"></param>
+    /// <returns></returns>
+    public int Solution0226(string binomial)
+    {
+        string[] temp = binomial.Split(" ");
+        int a = int.Parse(temp[0]);
+        int b = int.Parse(temp[2]);
+        string op = temp[1];
+
+        switch(op)
+        {
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            default:
+                return 0;
+        }
+    }
     /// <summary>
     /// 약수 구하기
     /// </summary>

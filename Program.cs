@@ -15,24 +15,15 @@ internal class Program
         string str = "Happy birthday!";
         //Console.WriteLine(sol.solution0123(5500));
         Sample sam = new Sample();
-        foreach(int num in sam.GetNumber())
-        {
-            //Console.WriteLine(num);
-        }
-        //sam.UseStruct();
         Util util = new Util();
-        //Util.PrintIntArray(sol.Solution0127(temp));
-        //Util.MakeLotto();
-        //Console.WriteLine();
-        float[] farray = {0.1f, 1.99f, 978.559f};
-        Util.PrintArray<int>(intArray);
-        Util.PrintArray<string>(sol.Solution0218(temp));
-        Util.PrintArray<float>(farray);
+        MySort sort = new MySort();
+        sort.Run();
 
+        /*
         CSVar obj = new CSVar(); // var obj = new CSVar();
-        //obj.Method1();
+        obj.Method1();
 
-
+        
         MyCustomer myc = new MyCustomer(55);
 
         //필드를 퍼블릭으로 하면 위험.
@@ -53,6 +44,7 @@ internal class Program
         //out 사용, 초기화 불필요
         int c, d;
         bool bret = GetData (10,20,out c, out d);
+        */
 
        
     }
@@ -82,6 +74,7 @@ internal class Program
         np.SetSize(1.5f);
         
     }
+    /*
     private static void IndexerSample()
     {
         //인덱서
@@ -92,6 +85,7 @@ internal class Program
         int ii = cls["KIM"];
         cls["LEE"] = 3;
     }
+    */
 
     static double GetData(ref int a, ref double b)
     {
