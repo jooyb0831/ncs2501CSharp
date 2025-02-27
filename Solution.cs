@@ -11,6 +11,25 @@ using System.Buffers;
 class Solution
 {   
     /// <summary>
+    /// 369게임
+    /// </summary>
+    /// <param name="order"></param>
+    /// <returns></returns>
+    public int Solution0227(int order)
+    {
+        int answer = 0;
+        string str = order.ToString();
+        foreach (var item in str)
+        {
+            if (item.Equals('3') || item.Equals('6') || item.Equals('9'))
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 간단한 식 계산하기
     /// </summary>
     /// <param name="binomial"></param>
