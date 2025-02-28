@@ -11,6 +11,56 @@ using System.Buffers;
 class Solution
 {   
     /// <summary>
+    /// 가장 큰 수 찾기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int[] Solution02281(int[] array)
+    {
+        int[] answer = new int[2];
+        Dictionary<int, int> dic = new Dictionary<int, int>();
+        for(int i = 0; i < array.Length; i++)
+        {
+            dic.Add(array[i], i);
+        }
+
+        List<int> list = array.ToList();
+        list.Sort();
+        int maxNum = list[list.Count-1];
+        int index = dic[maxNum];
+        answer[0] = maxNum;
+        answer[1] = index;
+        return answer;
+        /*
+        int maxNum = array.Max();
+        int index = Array.IndexOf(array, maxNum);
+        int[] answer = [maxNum, index];
+        return answer;
+        */
+    }
+
+    /// <summary>
+    /// 가까운 1 찾기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="idx"></param>
+    /// <returns></returns>
+    public int Solution0228(int[] arr, int idx)
+    {
+        int ans = -1;
+
+        for(int i = idx; i<arr.Length; i++)
+        {
+            if(arr[i] == 1)
+            {
+                ans = i;
+                break;
+            }
+        }
+        return ans;
+    }
+
+    /// <summary>
     /// 369게임
     /// </summary>
     /// <param name="order"></param>
