@@ -2,6 +2,7 @@
 #define ANDROID
 using System.Collections;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.Runtime.Loader;
 using System.Security.Cryptography.X509Certificates;
@@ -9,6 +10,44 @@ using System.Text;
 
 class Sample
 {
+
+
+    //람다식
+    // (입력 파라미터) => {실행문장 블럭};
+    public void LambdaSample()
+    {
+        /*
+        str () => {Console.WriteLine("NOme");}
+        () => Console.WriteLine("No");
+        (p) => Write(p);
+        (s, e) => Write(s,e);
+        */
+
+        //this.button1.Click += new System.EventHandler(button1_Click);
+        //this.button1.Click += button1_Click;
+        /*
+        this.button1.Click += delegate (object s, EventArgs e)
+        {
+            ((Button)sender).BackClolr = Color.Red;
+        };
+        */
+        //this.button1.Click += (s, e) => ((Button)sender).BackClolr = Color.Red;
+    }
+
+    private void button1_Click(object s, EventArgs e)
+    {
+       //((Button)sender).BackClolr = Color.Red;
+    }
+
+    private void Write()
+    {
+        Console.WriteLine("No");
+    }
+    private void Write(string str, string str3)
+    {
+        Console.WriteLine(str);
+        Console.WriteLine(str3);
+    }
     //delegate 정의
     delegate int MyDelegate(string s);
 

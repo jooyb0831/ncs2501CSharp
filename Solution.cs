@@ -10,6 +10,19 @@ using System.Buffers;
 
 class Solution
 {   
+
+    public string Solution0304(int age)
+    {
+        string answer = string.Empty;
+        while(age>0)
+        {
+            int val = age % 10;
+            char chr = Convert.ToChar(val + 'a');
+            answer = chr + answer;
+            age /= 10;
+        }
+        return answer;
+    }
     /// <summary>
     /// 가장 큰 수 찾기
     /// </summary>
