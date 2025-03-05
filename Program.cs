@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Diagnostics;
 using System.Reflection.Metadata;
+using MySystem;
 
 //인터널:같은 어셈블리에서만 접근 가능.
 internal class Program
@@ -20,6 +21,7 @@ internal class Program
         sort.Run();
 
         /*
+
         CSVar obj = new CSVar(); // var obj = new CSVar();
         obj.Method1();
 

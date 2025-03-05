@@ -9,8 +9,60 @@ using System.Buffers;
 
 
 class Solution
-{   
+{
+    /// <summary>
+    /// 인덱스 바꾸기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public string Solution0305(string my_string, int num1, int num2)
+    {
+        string ans = "";
+        char char1 = my_string[num1];
+        char char2 = my_string[num2];
+        for(int i = 0; i < my_string.Length; i++)
+        {
+            if(i == num1)
+            {
+                ans += char2;
+            }
+            else if(i==num2)
+            {
+                ans += char1;
+            }
+            else
+            {
+            ans += my_string[i];
+            }
+        }
+        return ans;
+        /*
+        string answer = "";
+        
+        List<char>my_char = new List<char>();
+        foreach(var item in my_string)
+        {
+            my_char.Add(item);
+        }
+        char temp = my_char[num1];
+        my_char[num1] = my_char[num2];
+        my_char[num2] = temp;
+        
+        for(int i=0; i<my_char.Count; i++)
+        {
+            answer+=my_char[i];
+        }
+        return answer;
+        */
+    }
 
+    /// <summary>
+    /// 외계행성의 나이
+    /// </summary>
+    /// <param name="age"></param>
+    /// <returns></returns>
     public string Solution0304(int age)
     {
         string answer = string.Empty;
