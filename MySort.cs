@@ -1,8 +1,40 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace MySystem
 {
+    //static class를 정의
+    public static class ExClass
+    {
+        //static 확장매서드를 정의. 첫 번째 파라미터는 어떤 클래스가 사용할지만 지정
+        public static string ToChangeCase(this String str)
+        { //this String : 실제 파라미터는 아님.
+            StringBuilder sb = new StringBuilder();
+            foreach (var ch in str)
+            {
+                if (ch >= 'A' && ch <= 'Z')
+                {
+                    sb.Append((char)('a' + ch - 'A'));
+                }
+                else if (ch >= 'a' && ch <= 'z')
+                {
+                    sb.Append((char)('A' + ch - 'a'));
+                }
+                else
+                {
+                    sb.Append(ch);
+                }
+            }
+            return sb.ToString();
+        }
 
+        //이 확장매서드는 파라미터 ch가필요함
+        public static bool Found(this String str, char ch)
+        {
+            int position = str.IndexOf(ch);
+            return position >= 0; //비교한 결과(bool값) return(0보다 큰 값일때)
+        }
+    }
     class MySort
     {
         //델리게이트 CompareDelegate 선언

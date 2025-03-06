@@ -11,6 +11,60 @@ using System.Buffers;
 class Solution
 {
     /// <summary>
+    /// 할 일 목록
+    /// </summary>
+    /// <param name="todo_list"></param>
+    /// <param name="finished"></param>
+    /// <returns></returns>
+    public string[] Solution0306 (string[] todo_list, bool[] finished)
+    {
+        int len = 0;
+        foreach(var item in finished)
+        {
+            if(!item) len++;
+        }
+        string[] answer = new string[len];
+        int cnt = 0;
+        for(int i = 0; i<finished.Length; i++)
+        {
+            if(!finished[i])
+            {
+                answer[cnt] = todo_list[i];
+                cnt++;
+            }
+        }
+        return answer;
+
+        /*
+        List<string> answer = new List<string>();
+        for(int i = 0; i < finished.Length; i++)
+        {
+            if(!finished[i])
+            {
+                answer.Add(todo_list[i]);
+            }
+        }
+        return answer.ToArray();
+        */
+        /*
+        Dictionary<string, bool> dic = new Dictionary<string, bool>();
+        List<string> answer = new List<string>();
+        for (int i = 0; i < finished.Length; i++)
+        {
+            dic.Add(todo_list[i], finished[i]);
+        }
+
+        foreach (var item in dic)
+        {
+            if (item.Value == false)
+            {
+                answer.Add(item.Key);
+            }
+        }
+        return answer.ToArray();
+        */
+    }
+    /// <summary>
     /// 인덱스 바꾸기
     /// </summary>
     /// <param name="my_string"></param>

@@ -19,6 +19,10 @@ internal class Program
         Util util = new Util();
         MySort sort = new MySort();
         sort.Run();
+        string changed = str.ToChangeCase(); 
+        bool check = str.Found('x');
+        
+        Console.WriteLine($"{changed}, {check}");
 
         /*
 
