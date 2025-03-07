@@ -11,6 +11,47 @@ using System.Buffers;
 class Solution
 {
     /// <summary>
+    /// 정수 부분
+    /// </summary>
+    /// <param name="flo"></param>
+    /// <returns></returns>
+    public int Solution03071(double flo)
+    {
+        //return (int)flo;
+
+        //복잡한 방법
+        string str = flo.ToString();
+        string[] strarr = str.Split(".");
+        return int.Parse(strarr[0]); //Convert.ToInt32(strarr[0]);
+    }
+
+
+    /// <summary>
+    /// 2차원 배열 대각선 순회하기
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution0307 (int[,] board, int k)
+    {
+        int answer = 0;
+        int len1 = board.GetLength(0);
+        int len2 = board.GetLength(1);
+
+        for (int i = 0; i < len1; i++)
+        {
+            for (int j = 0; j < len2; j++)
+            {
+                if (i + j <= k)
+                {
+                    answer += board[i, j];
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 할 일 목록
     /// </summary>
     /// <param name="todo_list"></param>
