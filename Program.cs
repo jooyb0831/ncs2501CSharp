@@ -24,6 +24,11 @@ internal class Program
         
         Console.WriteLine($"{changed}, {check}");
 
+        Class1 class1 = new Class1();
+        class1.Get();
+        class1.Run();
+        class1.Get();
+
         /*
 
         CSVar obj = new CSVar(); // var obj = new CSVar();

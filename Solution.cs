@@ -10,6 +10,42 @@ using System.Buffers;
 
 class Solution
 {
+
+    /// <summary>
+    /// 피자 나눠먹기2
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0310(int n)
+    {
+        int answer = 0;
+        do
+        {
+            answer++;
+        } while (answer * 6 % n != 0);
+        return answer;
+        
+        /*
+        int answer = 1;
+        for (int i = answer; i <= 6 * answer; i++)
+        {
+            if ((answer * 6) % n == 0)
+            {
+                break;
+            }
+            answer++;
+        }
+        */
+        /*
+        int answer = 1;
+        while (answer * 6 % n !=0)
+        {
+            answer ++;
+        }
+        return answer;
+        */
+    }
+
     /// <summary>
     /// 정수 부분
     /// </summary>

@@ -8,6 +8,24 @@ using System.Runtime.Loader;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
+partial class Class1
+{
+    public void Run()
+    {
+
+    }
+}
+
+partial struct Struct1
+{
+    public int ID;
+}
+
+partial interface IDoable
+{
+    string Name{get;set;}
+}
+
 class Sample
 {
 
