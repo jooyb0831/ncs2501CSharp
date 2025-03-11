@@ -6,10 +6,45 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Security.Cryptography;
 using System.Buffers;
+using Microsoft.VisualBasic;
 
 
 class Solution
 {
+
+    /// <summary>
+    /// 중복된 문자 제거
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution0311(string my_string)
+    {
+        string answer = "";
+
+        foreach(var item in my_string)
+        {
+            if(!answer.Contains(item))
+            {
+                answer += item;
+            }
+        }
+        return answer;
+
+#region HashSet활용
+        /*
+        HashSet<char> set = new HashSet<char>();
+        foreach(var item in my_string)
+        {
+            if(set.Add(item))
+            {
+                answer += item;
+            }
+        }
+        */
+#endregion
+        
+    }
+
 
     /// <summary>
     /// 피자 나눠먹기2
@@ -24,7 +59,7 @@ class Solution
             answer++;
         } while (answer * 6 % n != 0);
         return answer;
-        
+#region OtherSolutions        
         /*
         int answer = 1;
         for (int i = answer; i <= 6 * answer; i++)
@@ -44,6 +79,7 @@ class Solution
         }
         return answer;
         */
+#endregion
     }
 
     /// <summary>
@@ -141,6 +177,7 @@ class Solution
         return answer.ToArray();
         */
     }
+
     /// <summary>
     /// 인덱스 바꾸기
     /// </summary>
