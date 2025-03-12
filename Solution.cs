@@ -11,6 +11,25 @@ using Microsoft.VisualBasic;
 
 class Solution
 {
+    /// <summary>
+    /// 진료순서 정하기
+    /// </summary>
+    /// <param name="emergency"></param>
+    /// <returns></returns>
+    public int[] Solution0312(int[] emergency)
+    {
+        int[] answer = new int[emergency.Length];
+        List<int> list = new List<int>(emergency);
+        list.Sort();
+        list.Reverse();
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            answer[i] = list.IndexOf(emergency[i]) + 1;
+        }
+
+        return answer;
+    }
 
     /// <summary>
     /// 중복된 문자 제거
