@@ -14,11 +14,17 @@ internal class Program
         string []temp = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Solution sol = new Solution();
         string str = "Happy birthday!";
-        //Console.WriteLine(sol.solution0123(5500));
+        Console.WriteLine(sol.Solution0313("aAb1B2cC34oOp"));
+        /*
         Sample sam = new Sample();
         Util util = new Util();
         MySort sort = new MySort();
         sort.Run();
+
+        Sample2 sam2 = new Sample2();
+        sam2.FormatString();
+        */
+        /*
         string changed = str.ToChangeCase(); 
         bool check = str.Found('x');
         
@@ -28,7 +34,7 @@ internal class Program
         class1.Get();
         class1.Run();
         class1.Get();
-
+        */
         /*
 
         CSVar obj = new CSVar(); // var obj = new CSVar();

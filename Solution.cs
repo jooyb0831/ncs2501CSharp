@@ -12,6 +12,74 @@ using Microsoft.VisualBasic;
 class Solution
 {
     /// <summary>
+    /// 숨어있는 숫자의 덧셈2
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution03131(string my_string)
+    {
+        int answer = 0;
+        string tmp = "0";
+        foreach (var item in my_string)
+        {
+            if (item >= '0' && item <= '9')
+            {
+                tmp += item;
+            }
+            else
+            {
+                answer += int.Parse(tmp);
+                tmp = "0";
+            }
+        }
+        answer += int.Parse(tmp);
+        return answer;
+        /*
+        bool isNumber = false;
+        int val = 0;
+        foreach(var item in my_string)
+        {
+            if (item >= '1' && item <= '9')
+            {
+                if (isNumber)
+                {
+                    val = val * 10 + item - '0';
+                }
+                else
+                {
+                    val = item - '0';
+                    isNumber = true;
+                }
+            }
+            else
+            {
+                isNumber = false;
+                answer += val;
+                val = 0;
+            }
+
+        }
+        */
+    }
+    
+    /// <summary>
+    /// 숨어있는 숫자의 덧셈1
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution0313(string my_string)
+    {
+        int answer = 0;
+        foreach(char item in my_string)
+        {
+            if (item >= '1' && item <= '9')
+            {
+                answer += (int)item - '0';
+            }
+        }
+        return answer;
+    }
+    /// <summary>
     /// 진료순서 정하기
     /// </summary>
     /// <param name="emergency"></param>
