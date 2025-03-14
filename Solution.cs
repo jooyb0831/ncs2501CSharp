@@ -11,6 +11,59 @@ using Microsoft.VisualBasic;
 
 class Solution
 {
+
+    /// <summary>
+    /// 한 번만 등장한 문자
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public string Solution0314(string s)
+    {
+        string answer = string.Empty;
+
+        for (char c = 'a'; c <= 'z'; c++)
+        {
+            if (s.Split(c).Length == 2)
+            {
+                answer += c;
+            }
+        }
+        return answer;
+        /*
+        string answer = "";
+
+        Dictionary<char, int> dic = new Dictionary<char, int>();
+
+        foreach (var item in s)
+        {
+            if (dic.ContainsKey(item))
+            {
+                dic[item]++;
+            }
+            else
+            {
+                dic.Add(item, 1);
+            }
+        }
+
+        List<char> list = new List<char>();
+        foreach (var item in dic)
+        {
+            if (item.Value == 1)
+            {
+                list.Add(item.Key);
+            }
+        }
+        list.Sort();
+        foreach (var item in list)
+        {
+            answer += item;
+        }
+        return answer;
+        */
+    }
+
+
     /// <summary>
     /// 숨어있는 숫자의 덧셈2
     /// </summary>

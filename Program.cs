@@ -14,16 +14,17 @@ internal class Program
         string []temp = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Solution sol = new Solution();
         string str = "Happy birthday!";
-        Console.WriteLine(sol.Solution0313("aAb1B2cC34oOp"));
+        //Console.WriteLine(sol.Solution0313("aAb1B2cC34oOp"));
         /*
         Sample sam = new Sample();
         Util util = new Util();
         MySort sort = new MySort();
         sort.Run();
+        */
 
         Sample2 sam2 = new Sample2();
-        sam2.FormatString();
-        */
+        sam2.BitOperation();
+        
         /*
         string changed = str.ToChangeCase(); 
         bool check = str.Found('x');

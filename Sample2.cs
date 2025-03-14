@@ -23,4 +23,37 @@ class Sample2
         Console.WriteLine($"지수 표기법 (e) . . . .: {b:0.000e+0}");
     }
 
+    public void Operation()
+    {
+        //증감연산자
+        //++a : a의 값을 1 증가하고 a를 출력
+        //a++ : a의 값을 출력한 뒤 1 증가
+
+        int a=3, b=5;
+        Console.WriteLine(a++ +b);
+        Console.WriteLine(a++ + --b);
+        Console.WriteLine(++a + a++);
+    }
+
+    public void BitOperation()
+    {
+        //비트 연산자
+        // & : 두 피연산자에 대응되는 비트에 논리곱(AND)
+        // | : 두 피연산자에 대응되는 비트에 논리합(OR)을 수행
+        // ^ : 두 피연산자에 대응되는 비트에 배타적 논리합 (XOR)을 수행 //두 비트가 같으면 0, 다르면 1
+
+        int a = 13, b = 10;
+
+        Console.WriteLine(a & b);
+        Console.WriteLine(a | b);
+        Console.WriteLine(a ^ b);
+
+        //시프트 연산자 : 빠르다.
+        // << -> 2씩 곱함
+        // >> -> 2씩 나눔
+        int c = 616;
+        Console.WriteLine(c << 4); 
+        Console.WriteLine(c >> 4);
+    }
+
 }
