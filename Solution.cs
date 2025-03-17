@@ -13,6 +13,52 @@ class Solution
 {
 
     /// <summary>
+    /// 잘라서 배열로 저장하기
+    /// </summary>
+    /// <param name="my_str"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string[] Solution0317(string my_str, int n)
+    {
+        int len = 0; // len = (my_str.Length -1 ) / n+1
+        if (my_str.Length % n == 0)
+        {
+            len = my_str.Length / n;
+        }
+        else
+        {
+            len = (my_str.Length / n) + 1;
+        }
+        string[] answer = new string[len];
+
+        int idx = 0, cnt = 0;
+
+        foreach (var item in my_str)
+        {
+            answer[idx] += item;
+            cnt++;
+            if (cnt == n)
+            {
+                idx++;
+                cnt = 0;
+            }
+        }
+        /*
+        int idx = 0
+        for (int i = 0; i < my_str.Length; i++)
+        {
+            if (i != 0 && i % n == 0)
+            {
+                idx++;
+            }
+            answer[idx] += my_str[i];
+        }
+        */
+        return answer;
+
+    }
+
+    /// <summary>
     /// 한 번만 등장한 문자
     /// </summary>
     /// <param name="s"></param>
