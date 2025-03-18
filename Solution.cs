@@ -7,10 +7,43 @@ using System.Collections;
 using System.Security.Cryptography;
 using System.Buffers;
 using Microsoft.VisualBasic;
+using System.Text.RegularExpressions;
 
 
 class Solution
 {
+    /// <summary>
+    /// 7의 개수
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution0318(int[] array)
+    {
+        int answer = 0;
+        StringBuilder sb = new StringBuilder();
+        foreach (var item in array)
+        {
+            sb.Append(item);
+        }
+        string str = sb.ToString();
+
+        //foreach 사용
+        foreach(var item in str)
+        {
+            if(item == '7')
+            {
+                answer ++;
+            }
+        }
+
+        //Regex사용 8.0
+        //answer = Regex.Count(str,"7");
+        /*
+        str = Regex.Replace(str, "[1-6890]","" );
+        answer = str.Length;
+        */
+        return answer;
+    }
 
     /// <summary>
     /// 잘라서 배열로 저장하기

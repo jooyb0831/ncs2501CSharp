@@ -1,5 +1,20 @@
 class Sample2
 {
+
+    public void InfiniteLoop()
+    {
+        int sum = 0;
+        int cnt = 1;
+        while(true)
+        {
+            Console.Write($"{cnt}번째 수를 입력하세요 : ");
+            string line = Console.ReadLine();
+            if(line == "end") break;
+            sum += int.Parse(line);
+            cnt ++;
+        }
+        Console.WriteLine($"지금까지 입력된 수를 모두 더하면 : {sum}입니다.");
+    }
     public void FormatString()
     {
         int a = 12345678;

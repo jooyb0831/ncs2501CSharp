@@ -23,7 +23,7 @@ internal class Program
         */
 
         Sample2 sam2 = new Sample2();
-        sam2.BitOperation();
+        sam2.InfiniteLoop();
         
         /*
         string changed = str.ToChangeCase(); 
