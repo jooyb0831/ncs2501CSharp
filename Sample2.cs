@@ -1,6 +1,35 @@
 class Sample2
 {
 
+    int[] array = {1,2,3,4};
+    void Use()
+    {
+        TotalSum(array);
+        int x = 0;
+        x = TotalSum(1,2,3,4);
+    }
+
+    public int TotalSum (params int[] list) //params
+    {
+        int sum = 0;
+        foreach(var item in list)
+        {
+            sum+=item;
+        }
+        return sum;
+    }
+    public void Swap(ref int a, ref int b)
+    {
+        int tmep = b;
+        b = a;
+        a = tmep;
+    }
+
+    public int Division(int a, int b)
+    {
+        return a/b;
+    }
+
     public void InfiniteLoop()
     {
         int sum = 0;

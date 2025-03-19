@@ -12,6 +12,27 @@ using System.Text.RegularExpressions;
 
 class Solution
 {
+    public int Solution0319(string[] order)
+    {
+        int answer = 0;
+        int price1 = 4500;
+        int price2 = 5000;
+        foreach(var item in order)
+        {
+            answer += item.Contains("cafelatte") ? 5000 : 4500;
+            /*
+            if(item.Contains("cafelatte"))
+            {
+                answer += price2;
+            }
+            else
+            {
+                answer += price1;
+            }
+            */
+        }
+        return answer;
+    }
     /// <summary>
     /// 7의 개수
     /// </summary>
