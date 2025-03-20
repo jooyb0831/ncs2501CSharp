@@ -12,6 +12,49 @@ using System.Text.RegularExpressions;
 
 class Solution
 {
+    /// <summary>
+    /// 문자열 계산하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution0320(string my_string)
+    {
+        string[] str = my_string.Split(" ");
+        int answer = int.Parse(str[0]);
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (str[i].Equals("+"))
+            {
+                answer += int.Parse(str[i + 1]);
+            }
+            else if (str[i].Equals("-"))
+            {
+                answer -= int.Parse(str[i + 1]);
+            }
+        }
+        return answer;
+        /*
+        int pm = 1;
+        int temp = 0;
+        foreach(var item in str)
+        {
+            if(item.Equals("+"))
+            {
+                pm = 1;
+            }
+            else if (item.Equals("-"))
+            {
+                pm = -1;
+            }
+            else
+            {
+                temp = Convert.ToInt32(item);
+            }
+            answer += pm * temp;
+        }
+        */
+    }
     public int Solution0319(string[] order)
     {
         int answer = 0;
