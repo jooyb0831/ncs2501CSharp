@@ -1,6 +1,20 @@
 namespace MySystem
 {
+    class AClass
+    {
+        protected int x = 123;
+    }
 
+    class BClass : AClass
+    {
+        static void Main()
+        {
+            AClass a = new AClass();
+            BClass b = new BClass();
+            //a.x=12;
+            b.x = 2;
+        }
+    }
     //Interface
     public interface ICompareable //인터페이스 자체는 정의만 있고 구현부는 없음
     {
@@ -10,7 +24,7 @@ namespace MySystem
     class MyClass : IComparable
     {
         //1. delegate 선언
-        private delegate void RunDelegate(int i );
+        private delegate void RunDelegate(int i);
         // 형식이 같으면 Rundelegate에 쓸 수 있음.
         private void RunThis(int val)
         {

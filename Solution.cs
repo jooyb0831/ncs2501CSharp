@@ -13,6 +13,54 @@ using System.Text.RegularExpressions;
 class Solution
 {
     /// <summary>
+    /// 두 수의 합
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public string Solution0321(string a, string b)
+    {
+    
+        var stb = new StringBuilder();
+        int len = Math.Max(a.Length, b.Length);
+        int temp = 0;
+        for (int i = 0 ; i < len; i++)
+        {
+            int va = 0;
+            if(a.Length >i)
+            {
+               va = a[a.Length -1 -i] -'0'; 
+            }
+            int vb = 0;
+            if(b.Length >i)
+            {
+               vb = b[b.Length-1-i] - '0';
+            }
+            int vc = va + vb + temp;
+
+            if(vc >= 10)
+            {
+                temp = 1;
+                vc -= 10;
+            }
+            else 
+            {
+                temp = 0;
+            }
+
+            stb.Insert(0, vc);
+        }
+        if(temp > 0)
+        {
+            stb.Insert(0,1);
+        }
+        return stb.ToString();
+    
+           
+    }
+    
+    
+    /// <summary>
     /// 문자열 계산하기
     /// </summary>
     /// <param name="my_string"></param>
