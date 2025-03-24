@@ -13,6 +13,90 @@ using System.Text.RegularExpressions;
 class Solution
 {
     /// <summary>
+    /// 캐릭터의 좌표
+    /// </summary>
+    /// <param name="keyinput"></param>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    public int[] Solution0324(string[] keyinput, int[] board)
+    {
+        int[] answer = new int[2];
+        int xRange = (board[0] - 1) / 2;
+        int yRange = (board[1] - 1) / 2;
+
+        int x = 0;
+        int y = 0;
+    
+        foreach (var item in keyinput)
+        {
+            switch (item)
+            {
+                case "left":
+                    x--;
+                    if (x < -xRange)
+                    {
+                        x = -xRange;
+                    }
+                    break;
+                case "right":
+                    x++;
+                    if (x > xRange)
+                    {
+                        x = xRange;
+                    }
+                    break;
+                case "up":
+                    y++;
+                    if (y > yRange)
+                    {
+                        y = yRange;
+                    }
+                    break;
+                case "down":
+                    y--;
+                    if (y < -yRange)
+                    {
+                        y = -yRange;
+                    }
+                    break;
+            }
+        }
+        /*
+        foreach(var item in keyinput)
+        {
+            switch(item)
+            {
+                case "up":
+                    {
+                        y++;
+                        break;
+                    }
+                case "down":
+                    {
+                        y--;
+                        break;
+                    }
+                case "left":
+                    {
+                        x--;
+                        break;
+                    }
+                case "right":
+                    {
+                        x++;
+                        break;
+                    }
+            }
+        }
+        */
+        answer[0] = x;
+        answer[1] = y;
+
+        return answer;
+    }
+    
+    
+    /// <summary>
     /// 두 수의 합
     /// </summary>
     /// <param name="a"></param>
