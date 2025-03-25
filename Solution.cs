@@ -13,6 +13,31 @@ using System.Text.RegularExpressions;
 class Solution
 {
     /// <summary>
+    /// 로그인 성공?
+    /// </summary>
+    /// <param name="id_pw"></param>
+    /// <param name="db"></param>
+    /// <returns></returns>
+    public string Solution0325(string[] id_pw, string[,] db)
+    {
+        for (int i = 0; i < db.GetLength(0); i++)
+        {
+            if (db[i, 0].Equals(id_pw[0]))
+            {
+                if (db[i, 1].Equals(id_pw[1]))
+                {
+                    return "login";
+                }
+                else
+                {
+                    return "wrong pw";
+                }
+            }
+        }
+        return "fail";
+    }
+
+    /// <summary>
     /// 캐릭터의 좌표
     /// </summary>
     /// <param name="keyinput"></param>
