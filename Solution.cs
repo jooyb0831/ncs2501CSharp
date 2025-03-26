@@ -8,10 +8,54 @@ using System.Security.Cryptography;
 using System.Buffers;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
+using System.Collections.Immutable;
 
 
 class Solution
 {
+    /// <summary>
+    /// 전국 대회 선발고사
+    /// </summary>
+    /// <param name="rank"></param>
+    /// <param name="attendance"></param>
+    /// <returns></returns>
+    public int Solution0326(int []rank, bool[] attendance)
+    {
+        /*
+        Dictionary<int, bool> dic = new Dictionary<int, bool>();
+        for(int i = 0; i < rank.Length; i++)
+        {
+            dic.Add(rank[i], attendance[i]);
+        }
+        dic.OrderBy(x => x.Key);
+
+        List<int> nums = new List<int>();
+        foreach(var item in dic)
+        {
+            if(item.Value == true)
+            {
+                nums.Add(Array.IndexOf(rank, item.Key));
+            }
+        }
+        int answer = 10000 * nums[0] + 100 * nums[1] + nums[0];
+        return answer;
+        */
+        
+        var dics = new Dictionary<int, int>();
+        var list = new List<int>(rank);
+        for(int i = 0; i < rank.Length; i++)
+        {
+            dics.Add(rank[i], i);
+            if(!attendance[i])
+            {
+                list[i] = list.Count +1;
+            }
+        }
+        list.Sort();
+        int answer = dics[list[0]] * 10000 + dics[list[1]] * 100 + dics[list[2]];
+        return answer;
+    }
+    
     /// <summary>
     /// 로그인 성공?
     /// </summary>

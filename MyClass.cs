@@ -1,5 +1,43 @@
 namespace MySystem
 {
+
+    public class OuterClass
+    {
+        private int numA = 70;
+
+        public class InnerClass
+        {
+            OuterClass instance;
+
+            public InnerClass(OuterClass a_instance)
+            {
+                instance = a_instance;
+            }
+
+            public void AccessVariable(int num)
+            {
+                this.instance.numA = num;
+            }
+
+            public void ShowVariable()
+            {
+                Console.WriteLine($"numA : {this.instance.numA}");
+            }
+        }
+        
+        class PrintClass
+        {
+            void PlayMethods()
+            {
+                OuterClass outer = new OuterClass();
+                OuterClass.InnerClass inner = new OuterClass.InnerClass(outer);
+
+                inner.ShowVariable();
+                inner.AccessVariable(60);
+                inner.ShowVariable();
+            }
+        }
+    }
     class AClass
     {
         protected int x = 123;
