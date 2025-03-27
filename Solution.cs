@@ -14,6 +14,36 @@ using System.Collections.Immutable;
 class Solution
 {
     /// <summary>
+    /// 치킨 쿠폰
+    /// </summary>
+    /// <param name="chicken"></param>
+    /// <returns></returns>
+    public int Solution0327(int chicken)
+    {
+        int answer = 0;
+        int dum = 0;
+        int remain = chicken;
+
+        do
+        {
+            dum = remain / 10;
+            remain = remain % 10 + dum;
+            answer += dum;
+        } while (dum > 0);
+        return answer;
+        /*
+        int answer = 0;
+        while(chicken >= 10)
+        {
+            chicken -= 10;
+            answer ++;
+            chicken ++;
+        }
+        return answer;
+        */
+
+    }
+    /// <summary>
     /// 전국 대회 선발고사
     /// </summary>
     /// <param name="rank"></param>
