@@ -14,6 +14,24 @@ using System.Collections.Immutable;
 class Solution
 {
     /// <summary>
+    /// 저주의 숫자 3
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0328(int n)
+    {
+        int answer = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            do
+            {
+                answer++;
+            } while (answer.ToString().Contains('3') || answer % 3 == 0);
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 치킨 쿠폰
     /// </summary>
     /// <param name="chicken"></param>
@@ -43,6 +61,7 @@ class Solution
         */
 
     }
+    
     /// <summary>
     /// 전국 대회 선발고사
     /// </summary>
