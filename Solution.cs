@@ -14,6 +14,106 @@ using System.Collections.Immutable;
 class Solution
 {
     /// <summary>
+    /// 코드 처리하기
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public string Solution0331(string code)
+    {
+        string answer = "";
+        int mode = 0;
+        for (int i = 0; i < code.Length; i++)
+        {
+            if (code[i].Equals('1'))
+            {
+                //mode = 1 -mode;
+                mode = (mode == 0) ? 1 : 0;
+                continue;
+            }
+            switch (mode)
+            {
+                case 0:
+                    {
+                        if (i % 2 == 0)
+                        {
+                            answer += code[i];
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    break;
+                case 1:
+                    {
+                        if (i % 2 == 1)
+                        {
+                            answer += code[i];
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    break;
+            }
+        }
+        if (answer == string.Empty)
+        {
+            answer = "EMPTY";
+        }
+        return answer;
+        /*
+        string answer = "";
+        List<char> Code_split = new List<char>();
+        foreach(char item in code)
+        {
+            Code_split.Add(item);
+        }
+        int mode=0;
+        for(int i=0; i<Code_split.Count; i++)
+        {
+            if(Code_split[i] =='1')
+            {
+                if(mode == 0)
+                {
+                mode=1;
+                }
+                else if (mode ==1)
+                {
+                mode=0;
+                }
+                continue;
+            }
+            if(mode == 0)
+            {
+                if(i%2==0)
+                {
+                    answer=answer+Code_split[i];
+                }
+                else if(i%2==1)
+                {
+                    continue;
+                }
+            }
+            else if(mode == 1)
+                if(i%2==1)
+                {
+                    answer=answer+Code_split[i];
+                }
+                else if(i%2!=1)
+                {
+                    continue;
+                }
+        }
+        if(answer == "")
+        {
+            answer = "EMPTY";
+        }
+        return answer;
+        */
+    }
+    /// <summary>
     /// 저주의 숫자 3
     /// </summary>
     /// <param name="n"></param>
