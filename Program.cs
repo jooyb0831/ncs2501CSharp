@@ -8,6 +8,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        Console.WriteLine(1/5);
         int[] intArray = new int[]{1,2,3,4,5};
         string []s1 = new string[]{"a","b","c"};
         string []s2 = new string[]{"com","b","d","p","c"};

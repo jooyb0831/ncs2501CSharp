@@ -13,6 +13,31 @@ using System.Collections.Immutable;
 
 class Solution
 {
+    public int[] Solution0401(int l, int r)
+    {
+        List<int> list = new List<int>();
+        for (int i = l; i <= r; i++)
+        {
+            if (i % 5 != 0)
+            {
+                continue;
+            }
+            else
+            {
+                string str = i.ToString();
+                if (str.Replace("0", "").Replace("5", "").Length == 0)
+                {
+                    list.Add(i);
+                }
+            }
+        }
+        if (list.Count == 0)
+        {
+            list.Add(-1);
+        }
+        return list.ToArray();
+
+    }
     /// <summary>
     /// 코드 처리하기
     /// </summary>

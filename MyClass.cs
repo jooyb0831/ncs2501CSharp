@@ -45,13 +45,15 @@ namespace MySystem
 
     class BClass : AClass
     {
-        static void Main()
+        
+        void Test()
         {
             AClass a = new AClass();
             BClass b = new BClass();
             //a.x=12;
             b.x = 2;
         }
+        
     }
     //Interface
     public interface ICompareable //인터페이스 자체는 정의만 있고 구현부는 없음
