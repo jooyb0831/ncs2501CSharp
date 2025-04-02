@@ -13,6 +13,46 @@ using System.Collections.Immutable;
 
 class Solution
 {
+
+    /// <summary>
+    /// OX퀴즈
+    /// </summary>
+    /// <param name="quiz"></param>
+    /// <returns></returns>
+    public string[] Solution0402(string[] quiz)
+    {
+        string[] answer = new string [quiz.Length];
+
+        for (int i = 0; i < quiz.Length; i++)
+        {
+            string[] temp = quiz[i].Split(" ");
+            bool isRight = false;
+            string op = temp[1];
+            int num1 = int.Parse(temp[0]);
+            int num2 = int.Parse(temp[2]);
+            int result = int.Parse(temp[4]);
+
+            if (op.Equals("+"))
+            {
+                isRight = (num1 + num2 == result);
+            }
+            else if (op.Equals("-"))
+            {
+                isRight = (num1 - num2 == result);
+            }
+
+            answer[i] = isRight ? "O" : "X";
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열 만들기2
+    /// </summary>
+    /// <param name="l"></param>
+    /// <param name="r"></param>
+    /// <returns></returns>
     public int[] Solution0401(int l, int r)
     {
         List<int> list = new List<int>();
@@ -38,6 +78,7 @@ class Solution
         return list.ToArray();
 
     }
+    
     /// <summary>
     /// 코드 처리하기
     /// </summary>
