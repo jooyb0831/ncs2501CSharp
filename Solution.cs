@@ -13,6 +13,28 @@ using System.Collections.Immutable;
 
 class Solution
 {
+    /// <summary>
+    /// 다음에 올 숫자
+    /// </summary>
+    /// <param name="common"></param>
+    /// <returns></returns>
+    public int Solution0403(int[] common)
+    {
+        int first = common[1] - common[0];
+        int second = common[2] - common[1];
+        int lastNum = common[common.Length - 1];
+
+        if (first == second)
+        {
+            return lastNum + first;
+        }
+        else
+        {
+            return lastNum * (common[1] / common[0]);
+        }
+
+        //return (first == second) ? (lastNum + first) : (lastNum * common[1] / common[0]);
+    }
 
     /// <summary>
     /// OX퀴즈

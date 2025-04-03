@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿#define TEST
+// See https://aka.ms/new-console-template for more information
 using System.Diagnostics;
 using System.Reflection.Metadata;
 using MySystem;
@@ -8,7 +9,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(1/5);
+        
         int[] intArray = new int[]{1,2,3,4,5};
         string []s1 = new string[]{"a","b","c"};
         string []s2 = new string[]{"com","b","d","p","c"};
@@ -23,8 +24,8 @@ internal class Program
         sort.Run();
         */
 
-        Sample2 sam2 = new Sample2();
-        sam2.InfiniteLoop();
+        //Sample2 sam2 = new Sample2();
+        //sam2.InfiniteLoop();
         
         /*
         string changed = str.ToChangeCase(); 
@@ -65,7 +66,16 @@ internal class Program
         bool bret = GetData (10,20,out c, out d);
         */
 
-       
+        Program program = new Program();
+        program.TestConditional();
+        Console.WriteLine("The End");
+
+    }
+
+    [Conditional("TEST")]
+    public void TestConditional()
+    {
+        Console.WriteLine("Test Conditional!");
     }
 
     private static void ClassTest()
