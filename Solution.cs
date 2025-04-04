@@ -13,6 +13,18 @@ using System.Collections.Immutable;
 
 class Solution
 {
+    public int[] Solution0404(int num, int total)
+    {
+        int[] answer = new int[num];
+        int idx = total / num;
+        int start = idx - ((num - 1) / 2);
+
+        for (int i = 0; i < num; i++)
+        {
+            answer[i] = start + i;
+        }
+        return answer;
+    }
     /// <summary>
     /// 다음에 올 숫자
     /// </summary>

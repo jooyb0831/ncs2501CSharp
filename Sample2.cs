@@ -1,3 +1,33 @@
+class Student
+{
+    private string name;
+    private int age;
+
+    public string Name
+    {
+        get { return name; }
+        set
+        {
+            if (value.Length > 3)
+            {
+                Console.WriteLine("이름은 3자가 넘을 수 없습니다.");
+            }
+            else name = value;
+        }
+    }
+
+    public int Age { get; set; }
+    /*{
+        Expression bodied Memeber
+        get => age; 
+        set => age = value;
+    }*/
+
+    private int height = 175;
+    public int Height => height;
+}
+
+
 class Sample2
 {
 
