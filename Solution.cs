@@ -13,6 +13,53 @@ using System.Collections.Immutable;
 
 class Solution
 {
+
+    /// <summary>
+    /// 안전지대
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    public int Solution0407(int[,] board)
+    {
+        int answer = 0;
+        //배열의 크기(행과 열을 구함)
+        int len = board.GetLength(0);
+
+        //주어진 보드 테두리가 있는 새로운 보드 만들기 (테두리 체크)
+        int[,] temp = new int[len + 2, len + 2];
+
+        for (int i = 1; i <= len; i++)
+        {
+            for (int j = 1; j <= len; j++)
+            {
+                if (board[i - 1, j - 1] == 1)
+                {
+                    temp[i - 1, j - 1]++;
+                    temp[i - 1, j]++;
+                    temp[i - 1, j + 1]++;
+                    temp[i, j - 1]++;
+                    temp[i, j]++;
+                    temp[i, j + 1]++;
+                    temp[i + 1, j - 1]++;
+                    temp[i + 1, j]++;
+                    temp[i + 1, j + 1]++;
+                }
+            }
+        }
+
+        for (int i = 1; i <= len; i++)
+        {
+            for (int j = 1; j <= len; j++)
+            {
+                if (temp[i, j] == 0)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
     public int[] Solution0404(int num, int total)
     {
         int[] answer = new int[num];
