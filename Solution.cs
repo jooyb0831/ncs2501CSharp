@@ -9,10 +9,159 @@ using System.Buffers;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
+using System.ComponentModel.DataAnnotations;
 
 
 class Solution
 {
+
+    public int Solution0408(int a, int b, int c, int d)
+    {
+        int answer = 0;
+        List<int> list = [a, b, c, d];
+        List<int> sameCntList = new List<int>();
+        for (int i = 0; i < list.Count; i++)
+        {
+            List<int> findNum = list.FindAll(n => n == list[i]);
+            sameCntList.Add(findNum.Count);
+        }
+        int sameCnt = sameCntList.Max();
+        int num = sameCntList.IndexOf(sameCnt);
+        int p = list[num];
+        switch(sameCnt)
+        {
+            case 4 :
+            {
+                answer = 1111 * p;
+                break;
+            }
+            case 3 :
+            {
+                list.RemoveAll(n => n == p);
+                int q = list[0];
+                answer =(10 * p + q) * (10 * p + q);
+                break;
+            }
+            case 2 :
+            {
+                if(list.Contains(0))
+                {
+                    list.RemoveAll(n => n == p);
+                    answer = list[0] * list[1];
+                    break;
+                }
+                else
+                {
+                    list.RemoveAll(n => n == p);
+                    int q = list[0];
+                    answer = (p + q) * Math.Abs(p - q);
+                    break;
+                }
+            }
+            default :
+            {
+                answer = list.Min();
+                break;
+            }
+        }
+    
+        return answer;
+    }
+    public int Check(int a, int b, int c, int d)
+    {
+        int answer = 0;
+        int[] dice = new int[7];
+        dice = IntoDice(a, dice);
+        dice = IntoDice(b, dice);
+        dice = IntoDice(c, dice);
+        dice = IntoDice(d, dice);
+
+        //4개가 모두 같은 숫자인 경우
+        if(dice.Contains(4))
+        {
+            for(int p = 1; p<=1; p++)
+            {
+                answer = p * 1111;
+                break;
+            }
+        }
+        else if (dice.Contains(3))
+        {
+            for(int p = 1; p<=6; p++)
+            {
+                if(dice[p] == 3)
+                {
+                    for( int q = 1; q<=6; q++)
+                    {
+                        if(dice[q] == 1)
+                        {
+                            answer = (10 * p + q) * (10 * p + q);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else if (dice.Contains(2))
+        {
+            //2-1-1
+            if(dice.Contains(1))
+            {
+                for(int q = 1; q<=6; q++)
+                {
+                    if(dice[q] == 1)
+                    {
+                        for(int r = q+1; r<=6; r++)
+                        {
+                            if(dice[r] == 1)
+                            {
+                                answer = q * r;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //2-2
+            else
+            {
+                for(int p = 1; p<=6 ;p++)
+                {
+                    if(dice[p] == 2)
+                    {
+                        for(int q = p +1; q<=6; q++)
+                        {
+                            if(dice[q]==2)
+                            {
+                                //q는 p보다 큼
+                                answer = (p+q) * (q-p);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        else
+        {
+            answer = 6;
+            for(int i = 1; i<=6; i++)
+            {
+                if((dice[i] == 1)&&(answer>i))
+                {
+                    answer = i;
+                }
+            }
+        }
+        return answer;
+    }
+    public int[] IntoDice(int value, int[] dice)
+    {
+        dice[value]++;
+        return dice;
+    }
+
 
     /// <summary>
     /// 안전지대

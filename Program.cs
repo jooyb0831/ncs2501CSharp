@@ -64,11 +64,14 @@ internal class Program
         //out 사용, 초기화 불필요
         int c, d;
         bool bret = GetData (10,20,out c, out d);
-        */
-
+        
         Program program = new Program();
         program.TestConditional();
         Console.WriteLine("The End");
+        */
+
+        LinqTest linqTest = new LinqTest();
+        linqTest.Test4();
 
     }
 

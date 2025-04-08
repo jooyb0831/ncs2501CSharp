@@ -1,4 +1,4 @@
-class Student
+public class Student
 {
     private string name;
     private int age;
