@@ -16,6 +16,7 @@ internal class Program
         string []temp = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Solution sol = new Solution();
         string str = "Happy birthday!";
+        
         //Console.WriteLine(sol.Solution0313("aAb1B2cC34oOp"));
         /*
         Sample sam = new Sample();

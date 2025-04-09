@@ -14,7 +14,48 @@ using System.ComponentModel.DataAnnotations;
 
 class Solution
 {
+    /// <summary>
+    /// 겹치는 선분의 길이
+    /// </summary>
+    /// <param name="lines"></param>
+    /// <returns></returns>
+    public int Solution0409(int[,] lines)
+    {
+        int answer = 0;
 
+        int min = -100;
+        int max = 100;
+        int len = max - min + 1;
+        int[] totalLength = new int[len];
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = lines[i, 0]; j < lines[i, 1]; j++)
+            {
+                //배열의 인덱스는 0부터 시작하지만
+                //실제 범위는 min 부터 시작하므로 min을 빼줘야 함.
+                totalLength[j - min]++;
+            }
+        }
+
+        for (int i = min; i <= max; i++)
+        {
+            if (totalLength[i - min] > 1)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 주사위게임3
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="c"></param>
+    /// <param name="d"></param>
+    /// <returns></returns>
     public int Solution0408(int a, int b, int c, int d)
     {
         int answer = 0;
